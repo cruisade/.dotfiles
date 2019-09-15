@@ -14,10 +14,6 @@
   frag = magenta bold
   old = red
   new = green
-[alias]
-  co = checkout
-  nb = checkout -b
-  l = log --graph --date=short
 [mergetool]
   prompt = false
 [mergetool "mvimdiff"]
