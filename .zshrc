@@ -24,6 +24,8 @@ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
 fi
 
 # alias
+alias sudo='sudo '
+
 alias v=vim
 alias vi=vim
 
@@ -31,6 +33,10 @@ alias g=git
 alias gco='git checkout'
 alias gl='git log --oneline --graph --decorate --all --max-count=30'
 alias gs='git status --short'
+alias gc='git commit'
+alias gc!='git commit --amend'
+alias gca='git commit -a'
+alias gca!='git commit -a --amend --no-edit'
 
 alias k=kubectl
 alias krm='kubectl delete'
