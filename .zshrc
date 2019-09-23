@@ -7,11 +7,11 @@ export ZSH="${HOME}/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
 
-#plugins=(wd)
-
+ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
 
 # :zgen
+# after adding new plugin run `zgen reset`, `rm ~/.zcompdump*` (to reload completion) and then `source ~/.zshrc` 
 {
   if [ ! -d ~/.zgen ]; then
       git clone https://github.com/tarjoilija/zgen ~/.zgen
@@ -22,16 +22,16 @@ source $ZSH/oh-my-zsh.sh
   docompinit
 
   if ! zgen saved; then
-    echo "zhen load plugins"
-
     zgen oh-my-zsh
+    zgen oh-my-zsh plugins/wd
     zgen load zdharma/fast-syntax-highlighting
 
     zgen save
   fi
-}
 
-source ~/.zgen/zgen.zsh
+  # Reload the zsh-completions (but zsh will start realy slow)
+  autoload -U compinit && compinit
+}
 
 # :kubectl
 source <(kubectl completion zsh)
@@ -57,8 +57,8 @@ alias gl='git log --oneline --graph --decorate --all --max-count=30'
 alias gs='git status --short'
 alias gc='git commit'
 alias gc!='git commit --amend'
-alias gca='git commit -a'
-alias gca!='git commit -a --amend --no-edit'
+alias gca='git add .; git commit -a'
+alias gca!='git add .; git commit -a --amend --no-edit'
 alias gp='git push'
 alias gpl='git pull'
 alias gd='git diff'
