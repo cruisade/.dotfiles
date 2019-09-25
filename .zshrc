@@ -28,13 +28,11 @@ source $ZSH/oh-my-zsh.sh
 
     zgen save
   fi
-
-  # Reload the zsh-completions (but zsh will start realy slow)
-  autoload -U compinit && compinit
 }
 
 # :kubectl
 source <(kubectl completion zsh)
+source <(helm completion zsh)
 
 # :tmux
 # autostart
@@ -42,11 +40,20 @@ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
   exec tmux
 fi
 
+# :func
+{
+  create-and-change-directory() {
+    mkdir -p "$@"
+    cd "$@"
+  }
+}
+
 # :alias
 alias sudo='sudo '
 alias viz='vim ~/.zshrc'
 alias zr='source ~/.zshrc && print "zsh config has been reloaded"'
-
+alias ck='create-and-change-directory'
+alias cdir='pwd | xclip'
 alias v=vim
 alias vi=vim
 
@@ -54,24 +61,34 @@ alias vi=vim
 alias g=git
 alias gco='git checkout'
 alias gl='git log --oneline --graph --decorate --all --max-count=30'
-alias gs='git status --short'
+alias gs='git status -u --short'
 alias gc='git commit'
 alias gc!='git commit --amend'
 alias gca='git add .; git commit -a'
 alias gca!='git add .; git commit -a --amend --no-edit'
 alias gp='git push'
 alias gpl='git pull'
+alias gf='git fetch'
 alias gd='git diff'
 
 # :alias-kubectl
 alias k=kubectl
 alias krm='kubectl delete'
 alias kc='kubectl create'
+alias ka='kubectl apply -f '
+
 alias kg='kubectl get'
+alias kga='kubectl get all'
+alias kgp='kubectl get po'
+
 alias kd='kubectl describe'
 alias kl='kubectl logs'
+alias kpf='kubectl port-forward '
 
 # :alias-docker
 alias d='docker '
 alias dco='docker-compose'
+
+#Reload the zsh-completions (but zsh will start realy slow)
+autoload -U compinit && compinit
 
