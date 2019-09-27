@@ -2,14 +2,6 @@ docompinit() {
   compinit -C       
 }
 
-# :oh-my-zsh
-export ZSH="${HOME}/.oh-my-zsh"
-
-ZSH_THEME="robbyrussell"
-
-ZSH_DISABLE_COMPFIX=true
-source $ZSH/oh-my-zsh.sh
-
 # :zgen
 # after adding new plugin run `zgen reset`, `rm ~/.zcompdump*` (to reload completion) and then `source ~/.zshrc` 
 {
@@ -30,15 +22,29 @@ source $ZSH/oh-my-zsh.sh
   fi
 }
 
+# :oh-my-zsh
+{
+	export ZSH="${HOME}/.zgen/robbyrussell/oh-my-zsh-master"
+
+	ZSH_THEME="robbyrussell"
+
+	ZSH_DISABLE_COMPFIX=true
+	source $ZSH/oh-my-zsh.sh
+}
+
 # :kubectl
-source <(kubectl completion zsh)
-source <(helm completion zsh)
+{
+	source <(kubectl completion zsh)
+	source <(helm completion zsh)
+}
 
 # :tmux
-# autostart
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux
-fi
+{
+	# autostart
+	if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+		exec tmux
+	fi
+}
 
 # :func
 {
