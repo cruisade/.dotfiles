@@ -1,8 +1,8 @@
-# set your user tokens as environment variables, such as ~/.secrets
-# See the README for examples.
 [user]
+  email = cuzmin.dmitry@gmail.com 
   name = gfx687
-  email = cuzmin.dmitry@gmail.com
+[credential]
+  helper = cache --timeout=360000
 [color]
   ui = true
 [color "branch"]
@@ -14,6 +14,9 @@
   frag = magenta bold
   old = red
   new = green
+[pager]
+  diff = diff-so-fancy | less --tabs=4 -RFX
+  show = diff-so-fancy | less --tabs=4 -RFX
 [mergetool]
   prompt = false
 [mergetool "mvimdiff"]

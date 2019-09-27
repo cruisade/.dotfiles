@@ -46,16 +46,29 @@ fi
     mkdir -p "$@"
     cd "$@"
   }
+
+  run-rider() {
+    sh /opt/JetBrains\ Rider-2019.1.2/bin/rider.sh $1 > /dev/null &
+  }
 }
 
 # :alias
 alias sudo='sudo '
-alias viz='vim ~/.zshrc'
-alias zr='source ~/.zshrc && print "zsh config has been reloaded"'
-alias ck='create-and-change-directory'
-alias cdir='pwd | xclip'
 alias v=vim
 alias vi=vim
+alias viz='vim ~/.zshrc'
+alias viv='vim ~/.vim_runtime/my_configs.vim'
+alias zr='source ~/.zshrc && print "zsh config has been reloaded"'
+
+alias ck='create-and-change-directory'
+alias cdir='pwd | xclip'
+
+alias python2=python
+alias py=python3
+alias python=python3
+alias pip=pip3
+
+alias rider='run-rider'
 
 # :alias-git
 alias g=git
