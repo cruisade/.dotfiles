@@ -3,12 +3,14 @@ docompinit() {
 }
 
 # :zgen
-# after adding new plugin run `zgen reset`, `rm ~/.zcompdump*` (to reload completion) and then `source ~/.zshrc` 
+# after adding new plugin run `zgen reset` and then `source ~/.zshrc` 
 {
   if [ ! -d ~/.zgen ]; then
       git clone https://github.com/tarjoilija/zgen ~/.zgen
   fi
 
+  ZSH_TMUX_AUTOSTART=true
+  ZSH_TMUX_AUTOCONNECT=false
   source ~/.zgen/zgen.zsh
 
   docompinit
@@ -16,7 +18,13 @@ docompinit() {
   if ! zgen saved; then
     zgen oh-my-zsh
     zgen oh-my-zsh plugins/wd
+    zgen oh-my-zsh plugins/tmux
+
     zgen load zdharma/fast-syntax-highlighting
+
+    ZSH_AUTOSUGGEST_STRATEGY=("history")
+    zgen load zsh-users/zsh-autosuggestions && _zsh_autosuggest_start
+    zgen load zsh-users/zsh-history-substring-search
 
     zgen save
   fi
@@ -25,10 +33,7 @@ docompinit() {
 # :oh-my-zsh
 {
 	export ZSH="${HOME}/.zgen/robbyrussell/oh-my-zsh-master"
-
 	ZSH_THEME="robbyrussell"
-
-	ZSH_DISABLE_COMPFIX=true
 	source $ZSH/oh-my-zsh.sh
 }
 
@@ -36,14 +41,6 @@ docompinit() {
 {
 	source <(kubectl completion zsh)
 	source <(helm completion zsh)
-}
-
-# :tmux
-{
-	# autostart
-	if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-		exec tmux
-	fi
 }
 
 # :func
@@ -89,6 +86,7 @@ alias gp='git push'
 alias gpl='git pull'
 alias gf='git fetch'
 alias gd='git diff'
+alias gr='git reset'
 
 # :alias-kubectl
 alias k=kubectl
@@ -108,6 +106,5 @@ alias kpf='kubectl port-forward '
 alias d='docker '
 alias dco='docker-compose'
 
-#Reload the zsh-completions (but zsh will start realy slow)
+#Reload the zsh-completions (needed for wd)
 autoload -U compinit && compinit
-
