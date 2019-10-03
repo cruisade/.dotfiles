@@ -2,14 +2,20 @@ docompinit() {
   compinit -C
 }
 
+export TERM=screen-256color
+
 # :prezto
 {
   zstyle ':prezto:*:*' color 'yes'
   zstyle ':prezto:load' pmodule \
         'completion' \
+				'tmux' \
+        'history-substring-search' \
+        'history'
 
   zstyle ':prezto:module:editor' key-bindings 'vi'
   zstyle ':completion:*' rehash true
+  zstyle ':prezto:module:tmux:auto-start' local 'yes'
 }
 
 # :zgen
@@ -52,11 +58,6 @@ docompinit() {
   fpath+=("$HOME/.zsh/pure")
   autoload -U promptinit; promptinit
   prompt pure
-}
-
-# :setup
-{
-  #zstyle ':prezto:module:tmux:auto-start' local 'yes'
 }
 
 # :git
@@ -124,7 +125,7 @@ alias kl='kubectl logs'
 alias kpf='kubectl port-forward '
 
 # :alias-docker
-alias d='docker '
-alias dco='docker-compose'
+alias dk='docker '
+alias dko='docker-compose'
 
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
