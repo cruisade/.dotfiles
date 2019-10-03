@@ -52,7 +52,7 @@ export TERM=screen-256color
 {
   if [ ! -d "$HOME/.zsh/pure" ]; then
     mkdir -p "$HOME/.zsh"
-    git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"  
+    git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
   fi
 
   fpath+=("$HOME/.zsh/pure")
