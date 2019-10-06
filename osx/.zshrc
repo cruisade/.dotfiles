@@ -9,11 +9,11 @@ export TERM=screen-256color
   zstyle ':prezto:*:*' color 'yes'
   zstyle ':prezto:load' pmodule \
         'completion' \
-				'tmux' \
+        'tmux' \
         'history-substring-search' \
         'history'
 
-  zstyle ':prezto:module:editor' key-bindings 'vi'
+ # zstyle ':prezto:module:editor' key-bindings 'vi'
   zstyle ':completion:*' rehash true
   zstyle ':prezto:module:tmux:auto-start' local 'yes'
 }
@@ -71,6 +71,10 @@ export TERM=screen-256color
   export PATH=$PATH:$HOME/.zsh
 }
 
+# :bindings
+{
+}
+
 # :func
 {
   create-and-change-directory() {
@@ -94,6 +98,9 @@ alias python2=python
 alias py=python3
 alias python=python3
 alias pip=pip3
+
+alias l='ls -1a'
+alias ll='ls -1al'
 
 # :alias-git
 alias g=git
@@ -127,5 +134,3 @@ alias kpf='kubectl port-forward '
 # :alias-docker
 alias dk='docker '
 alias dko='docker-compose'
-
-source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
