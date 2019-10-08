@@ -43,6 +43,8 @@ Plug 'sonph/onehalf', {'rtp': 'vim/'}
     colorscheme onehalfdark
   endfunc!
 
+" Plug 'edkolev/tmuxline.vim'
+
 Plug 'scrooloose/nerdcommenter'
   let g:NERDSpaceDelims = 1
   " C-_ actually is <C-/>
@@ -100,6 +102,7 @@ set splitright
 set cursorline
 set completeopt-=preview
 set nowrap
+set t_Co=256
 
 set so=7
 set textwidth=79
@@ -113,10 +116,13 @@ set pastetoggle=<F11>
 set undodir=~/.vim/tempdirs/undodir
 set undofile
 
-augroup setup_colorscheme
-  au!
-  au VimEnter * call _setup_colorscheme()
-augroup end
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
+call _setup_colorscheme()
 
 " :hooks
 

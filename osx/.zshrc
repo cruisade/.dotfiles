@@ -2,7 +2,7 @@ docompinit() {
   compinit -C
 }
 
-export TERM=screen-256color
+export TERM=xterm-256color
 
 # :prezto
 {
@@ -10,6 +10,7 @@ export TERM=screen-256color
   zstyle ':prezto:load' pmodule \
         'completion' \
         'tmux' \
+        'git' \
         'history-substring-search' \
         'history'
 
@@ -88,7 +89,7 @@ alias sudo='sudo '
 alias v=vim
 alias vi=vim
 alias viz='vim ~/.zshrc'
-alias viv='vim ~/.vim_runtime/my_configs.vim'
+alias viv='vim ~/.vimrc'
 alias zr='source ~/.zshrc && print "zsh config has been reloaded"'
 
 alias ck='create-and-change-directory'
@@ -103,19 +104,13 @@ alias l='ls -1a'
 alias ll='ls -1al'
 
 # :alias-git
-alias g=git
-alias gco='git checkout'
 alias gl='git log --oneline --graph --decorate --all --max-count=30'
-alias gs='git status -u --short'
-alias gc='git commit'
-alias gc!='git commit --amend'
-alias gca='git add .; git commit -a'
-alias gca!='git add .; git commit -a --amend --no-edit'
-alias gp='git push'
-alias gpl='git pull'
-alias gf='git fetch'
+alias gc!='git commit --amend --reuse-message HEAD'
+alias gca='git add .; git commit --all'
+alias gca!='git add .; git commit --all --amend --reuse-message HEAD'
+
 alias gd='git diff'
-alias gr='git reset'
+alias gdo='git diff origin/master'
 
 # :alias-kubectl
 alias k=kubectl
