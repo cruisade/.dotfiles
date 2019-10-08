@@ -1,5 +1,7 @@
 set nocompatible
 
+let mapleader=','
+
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !mkdir -p ~/.vim/autoload
   silent !curl -fLo ~/.vim/autoload/plug.vim
@@ -20,14 +22,14 @@ Plug 'dense-analysis/ale'
   let g:ale_lint_on_enter = 0
 
 Plug 'sirver/ultisnips'
-  let g:UltiSnipsExpandTrigger="<ENTER>"
-  let g:UltiSnipsJumpForwardTrigger="<C-J>"
-  let g:UltiSnipsJumpBackwardTrigger="<C-K>"
+  let g:UltiSnipsExpandTrigger='<TAB>'
 
   let g:UltiSnipsEnableSnipMate = 0
-  let g:UltiSnipsSnippetDirectories=[ $HOME . "/.vim/snippets" ]
+  let g:UltiSnipsSnippetDirectories=[ $HOME . '/.vim/snippets' ]
 
 Plug 'Valloric/YouCompleteMe'
+  let g:ycm_key_list_previous_completion=['<UP>', '<C-K>']
+  let g:ycm_key_list_select_completion=['<DOWN>', '<C-J>']
 
 Plug 'itchyny/lightline.vim'
 
@@ -45,7 +47,7 @@ Plug 'scrooloose/nerdcommenter'
   let g:NERDSpaceDelims = 1
 
 Plug 'scrooloose/nerdtree'
-  let g:NERDTreeWinPos = "right"
+  let g:NERDTreeWinPos = 'right'
   let NERDTreeShowHidden=1
   let g:NERDTreeWinSize=35
   let NERDTreeQuitOnOpen=1
@@ -63,12 +65,10 @@ Plug 'junegunn/goyo.vim'
 call plug#end()
 
 " :binds
-let mapleader = ","
 
 nnoremap <silent> <Leader>/ :noh<CR>
 
 syntax on
-set t_Co=256
 filetype plugin on
 filetype indent on
 
