@@ -2,11 +2,24 @@ docompinit() {
   compinit -C
 }
 
+# :prezto
+{
+  zstyle ':prezto:*:*' color 'yes'
+  zstyle ':prezto:load' pmodule \
+        'git'
+
+  zstyle ':completion:*' rehash true
+}
+
 # :zgen
 # after adding new plugin run `zgen reset` and then `source ~/.zshrc`
 {
   if [ ! -d ~/.zgen ]; then
       git clone https://github.com/tarjoilija/zgen ~/.zgen
+  fi
+
+  if [ ! -d ~/.zpezto ]; then
+    ln -sf ~/.zgen/sorin-ionescu/prezto-master ~/.zprezto
   fi
 
   ZSH_TMUX_AUTOSTART=true
@@ -19,6 +32,7 @@ docompinit() {
     zgen oh-my-zsh
     zgen oh-my-zsh plugins/wd
     zgen oh-my-zsh plugins/tmux
+    zgen load sorin-ionescu/prezto
 
     zgen load zdharma/fast-syntax-highlighting
 
@@ -32,15 +46,26 @@ docompinit() {
 
 # :oh-my-zsh
 {
-	export ZSH="${HOME}/.zgen/robbyrussell/oh-my-zsh-master"
-	ZSH_THEME="robbyrussell"
-	source $ZSH/oh-my-zsh.sh
+  export ZSH="${HOME}/.zgen/robbyrussell/oh-my-zsh-master"
+  ZSH_THEME="robbyrussell"
+  source $ZSH/oh-my-zsh.sh
 }
 
 # :kubectl
 {
-	source <(kubectl completion zsh)
-	source <(helm completion zsh)
+  source <(kubectl completion zsh)
+  source <(helm completion zsh)
+}
+
+# :git
+{
+  if [ ! -f "$HOME/.zsh/diff-so-fancy" ]; then
+    curl -s 'https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy' --output "$HOME/.zsh/diff-so-fancy"
+
+    chmod +x $HOME/.zsh/diff-so-fancy
+  fi
+
+  export PATH=$PATH:$HOME/.zsh
 }
 
 # :func
@@ -60,7 +85,7 @@ alias sudo='sudo '
 alias v=vim
 alias vi=vim
 alias viz='vim ~/.zshrc'
-alias viv='vim ~/.vim_runtime/my_configs.vim'
+alias viv='vim ~/.vimrc'
 alias zr='source ~/.zshrc && print "zsh config has been reloaded"'
 
 alias ck='create-and-change-directory'
@@ -74,19 +99,14 @@ alias pip=pip3
 alias rider='run-rider'
 
 # :alias-git
-alias g=git
-alias gco='git checkout'
 alias gl='git log --oneline --graph --decorate --all --max-count=30'
-alias gs='git status -u --short'
-alias gc='git commit'
-alias gc!='git commit --amend'
-alias gca='git add .; git commit -a'
-alias gca!='git add .; git commit -a --amend --no-edit'
-alias gp='git push'
-alias gpl='git pull'
-alias gf='git fetch'
+
+alias gc!='git commit --amend --reuse-message HEAD'
+alias gca='git add .; git commit --all'
+alias gca!='git add .; git commit --all --amend --reuse-message HEAD'
+
 alias gd='git diff'
-alias gr='git reset'
+alias gdo='git diff origin/master'
 
 # :alias-kubectl
 alias k=kubectl
