@@ -14,7 +14,6 @@ export TERM=xterm-256color
         'history-substring-search' \
         'history'
 
- # zstyle ':prezto:module:editor' key-bindings 'vi'
   zstyle ':completion:*' rehash true
   zstyle ':prezto:module:tmux:auto-start' local 'yes'
 }
@@ -76,6 +75,11 @@ export TERM=xterm-256color
 {
 }
 
+# :setup
+{
+  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=241"
+}
+
 # :func
 {
   create-and-change-directory() {
@@ -85,47 +89,49 @@ export TERM=xterm-256color
 }
 
 # :alias
-alias sudo='sudo '
-alias v=vim
-alias vi=vim
-alias viz='vim ~/.zshrc'
-alias viv='vim ~/.vimrc'
-alias zr='source ~/.zshrc && print "zsh config has been reloaded"'
+{
+  alias sudo='sudo '
+  alias v=vim
+  alias vi=vim
+  alias viz='vim ~/.zshrc'
+  alias viv='vim ~/.vimrc'
+  alias zr='source ~/.zshrc && print "zsh config has been reloaded"'
 
-alias ck='create-and-change-directory'
-alias cdir='pwd | xclip'
+  alias ck='create-and-change-directory'
+  alias cdir='pwd | xclip'
 
-alias python2=python
-alias py=python3
-alias python=python3
-alias pip=pip3
+  alias python2=python
+  alias py=python3
+  alias python=python3
+  alias pip=pip3
 
-alias l='ls -1a'
-alias ll='ls -1al'
+  alias l='ls -1a'
+  alias ll='ls -1al'
 
-# :alias-git
-alias gl='git log --oneline --graph --decorate --all --max-count=30'
-alias gc!='git commit --amend --reuse-message HEAD'
-alias gca='git add .; git commit --all'
-alias gca!='git add .; git commit --all --amend --reuse-message HEAD'
+  # :alias-git
+  alias gl='git log --oneline --graph --decorate --all --max-count=30'
+  alias gc!='git commit --amend --reuse-message HEAD'
+  alias gca='git add .; git commit --all'
+  alias gca!='git add .; git commit --all --amend --reuse-message HEAD'
 
-alias gd='git diff'
-alias gdo='git diff origin/master'
+  alias gd='git diff'
+  alias gdo='git diff origin/master'
 
-# :alias-kubectl
-alias k=kubectl
-alias krm='kubectl delete'
-alias kc='kubectl create'
-alias ka='kubectl apply -f '
+  # :alias-kubectl
+  alias k=kubectl
+  alias krm='kubectl delete'
+  alias kc='kubectl create'
+  alias ka='kubectl apply -f '
 
-alias kg='kubectl get'
-alias kga='kubectl get all'
-alias kgp='kubectl get po'
+  alias kg='kubectl get'
+  alias kga='kubectl get all'
+  alias kgp='kubectl get po'
 
-alias kd='kubectl describe'
-alias kl='kubectl logs'
-alias kpf='kubectl port-forward '
+  alias kd='kubectl describe'
+  alias kl='kubectl logs'
+  alias kpf='kubectl port-forward '
 
-# :alias-docker
-alias dk='docker '
-alias dko='docker-compose'
+  # :alias-docker
+  alias dk='docker '
+  alias dko='docker-compose'
+}
