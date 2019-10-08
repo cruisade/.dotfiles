@@ -45,6 +45,9 @@ Plug 'sonph/onehalf', {'rtp': 'vim/'}
 
 Plug 'scrooloose/nerdcommenter'
   let g:NERDSpaceDelims = 1
+  " C-_ actually is <C-/>
+  nmap <C-_> <Plug>NERDCommenterToggle('n', 'Toggle')<Cr>
+  inoremap <C-_> <C-o>:call NERDComment(0, 'toggle')<C-m>
 
 Plug 'scrooloose/nerdtree'
   let g:NERDTreeWinPos = 'right'
@@ -65,7 +68,6 @@ Plug 'junegunn/goyo.vim'
 call plug#end()
 
 " :binds
-
 nnoremap <silent> <Leader>/ :noh<CR>
 
 syntax on
@@ -99,6 +101,7 @@ set cursorline
 set completeopt-=preview
 set nowrap
 
+set so=7
 set textwidth=79
 set timeoutlen=400
 set wildmenu
@@ -106,6 +109,9 @@ set wildmenu
 set clipboard=unnamedplus
 
 set pastetoggle=<F11>
+
+set undodir=~/.vim/tempdirs/undodir
+set undofile
 
 augroup setup_colorscheme
   au!

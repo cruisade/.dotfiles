@@ -1,8 +1,12 @@
 shared configuration files
 
-1) TMUX
-2) VIM configuration (https://github.com/amix/vimrc)
-3) diff-so-fancy (https://github.com/so-fancy/diff-so-fancy)
+TERMINAL
+1) terminal theme - OneHalfDark (https://github.com/sonph/onehalf)
 
-linters: (can be installed with python's pip)
-	- yamllint
+VIM
+1) linters: (can be installed with python's pip)
+      - yamllint
+
+OTHER
+1) TMUX
+
