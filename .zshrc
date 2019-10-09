@@ -37,8 +37,6 @@ export TERM=xterm-256color
     zgen load sorin-ionescu/prezto
     zgen load mafredri/zsh-async
 
-    zgen oh-my-zsh plugins/wd
-
     zgen load zdharma/fast-syntax-highlighting
 
     ZSH_AUTOSUGGEST_STRATEGY=("history")
@@ -55,6 +53,8 @@ export TERM=xterm-256color
     git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
   fi
 
+  # PURE_PROMPT_SYMBOL='→'
+  PURE_PROMPT_SYMBOL='➔'
   fpath+=("$HOME/.zsh/pure")
   autoload -U promptinit; promptinit
   prompt pure
@@ -77,6 +77,8 @@ export TERM=xterm-256color
 
 # :setup
 {
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
   ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=241"
 }
 
@@ -105,8 +107,8 @@ export TERM=xterm-256color
   alias python=python3
   alias pip=pip3
 
-  alias l='ls -1a'
-  alias ll='ls -1al'
+  alias l='ls -1A'
+  alias ll='ls -1Al'
 
   # :alias-git
   alias gl='git log --oneline --graph --decorate --all --max-count=30'
@@ -135,3 +137,4 @@ export TERM=xterm-256color
   alias dk='docker '
   alias dko='docker-compose'
 }
+
