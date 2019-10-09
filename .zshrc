@@ -53,7 +53,6 @@ export TERM=xterm-256color
     git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
   fi
 
-  # PURE_PROMPT_SYMBOL='→'
   PURE_PROMPT_SYMBOL='➔'
   fpath+=("$HOME/.zsh/pure")
   autoload -U promptinit; promptinit
@@ -121,7 +120,7 @@ export TERM=xterm-256color
 
   # :alias-kubectl
   alias k=kubectl
-  alias krm='kubectl delete'
+  alias kx='kubectl delete'
   alias kc='kubectl create'
   alias ka='kubectl apply -f '
 
