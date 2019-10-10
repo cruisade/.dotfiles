@@ -67,6 +67,10 @@ Plug 'junegunn/goyo.vim'
   let g:goyo_margin_bottom = 2
   nnoremap <silent> <leader>z :Goyo<cr>
 
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+Plug 'junegunn/fzf.vim'
+
 call plug#end()
 
 " :binds
@@ -109,7 +113,7 @@ set textwidth=79
 set timeoutlen=400
 set wildmenu
 
-set clipboard=unnamedplus
+set clipboard=unnamed " works on mac
 
 set pastetoggle=<F11>
 
