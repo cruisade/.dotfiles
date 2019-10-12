@@ -9,13 +9,11 @@ export TERM=xterm-256color
   zstyle ':prezto:*:*' color 'yes'
   zstyle ':prezto:load' pmodule \
         'completion' \
-        'tmux' \
         'git' \
         'history-substring-search' \
         'history'
 
   zstyle ':completion:*' rehash true
-  zstyle ':prezto:module:tmux:auto-start' local 'yes'
 }
 
 # :zgen
@@ -53,6 +51,7 @@ export TERM=xterm-256color
     git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
   fi
 
+  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=241"
   PURE_PROMPT_SYMBOL='➔'
   fpath+=("$HOME/.zsh/pure")
   autoload -U promptinit; promptinit
@@ -70,15 +69,18 @@ export TERM=xterm-256color
   export PATH=$PATH:$HOME/.zsh
 }
 
-# :bindings
-{
-}
-
 # :setup
 {
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=241"
+  kubectl() {
+    if ! type __start_kubectl >/dev/null 2>&1; then
+        source <(command kubectl completion zsh)
+    fi
+
+    command kubectl "$@"
+  }
+
 }
 
 # :func
@@ -97,14 +99,12 @@ export TERM=xterm-256color
   alias viz='vim ~/.zshrc'
   alias viv='vim ~/.vimrc'
   alias zr='source ~/.zshrc && print "zsh config has been reloaded"'
-
-  alias ck='create-and-change-directory'
-  alias cdir='pwd | xclip'
-
   alias python2=python
   alias py=python3
   alias python=python3
   alias pip=pip3
+
+  alias ck='create-and-change-directory'
 
   alias l='ls -1A'
   alias ll='ls -1Al'

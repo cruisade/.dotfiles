@@ -23,6 +23,8 @@ Plug 'dense-analysis/ale'
 
 Plug 'sirver/ultisnips'
   let g:UltiSnipsExpandTrigger='<TAB>'
+  let g:UltiSnipsJumpForwardTrigger="<TAB>"
+  let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
 
   let g:UltiSnipsEnableSnipMate = 0
   let g:UltiSnipsSnippetDirectories=[ $HOME . '/.vim/snippets' ]
@@ -42,8 +44,6 @@ Plug 'sonph/onehalf', {'rtp': 'vim/'}
     set background="dark"
     colorscheme onehalfdark
   endfunc!
-
-" Plug 'edkolev/tmuxline.vim'
 
 Plug 'scrooloose/nerdcommenter'
   let g:NERDSpaceDelims = 1
@@ -68,8 +68,10 @@ Plug 'junegunn/goyo.vim'
   nnoremap <silent> <leader>z :Goyo<cr>
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
 Plug 'junegunn/fzf.vim'
+
+Plug 'ctrlpvim/ctrlp.vim'
+  let g:ctrlp_show_hidden = 1
 
 call plug#end()
 
@@ -110,12 +112,12 @@ set t_Co=256
 
 set so=7
 set textwidth=79
-set timeoutlen=400
+set timeoutlen=100
 set wildmenu
 
 set clipboard=unnamed " works on mac
 
-set pastetoggle=<F11>
+" set pastetoggle=<F11>
 
 set undodir=~/.vim/tempdirs/undodir
 set undofile
