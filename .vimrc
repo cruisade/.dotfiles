@@ -21,6 +21,19 @@ Plug 'dense-analysis/ale'
   let g:ale_lint_on_text_changed = 'never'
   let g:ale_lint_on_enter = 0
 
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+  inoremap <expr> <C-J> pumvisible() ? "\<C-n>" : "\<Tab>"
+  inoremap <expr> <C-K> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+  let g:coc_global_extensions = [
+        \ 'coc-python',
+        \ 'coc-json',
+        \ 'coc-ultisnips',
+        \ 'coc-yaml'
+        \ ]
+
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+
 Plug 'sirver/ultisnips'
   let g:UltiSnipsExpandTrigger='<TAB>'
   let g:UltiSnipsJumpForwardTrigger="<TAB>"
@@ -28,10 +41,6 @@ Plug 'sirver/ultisnips'
 
   let g:UltiSnipsEnableSnipMate = 0
   let g:UltiSnipsSnippetDirectories=[ $HOME . '/.vim/snippets' ]
-
-Plug 'Valloric/YouCompleteMe'
-  let g:ycm_key_list_previous_completion=['<UP>', '<C-K>']
-  let g:ycm_key_list_select_completion=['<DOWN>', '<C-J>']
 
 Plug 'itchyny/lightline.vim'
 
@@ -78,18 +87,22 @@ call plug#end()
 " :binds
 nnoremap <silent> <Leader>/ :noh<CR>
 
+" :settings
+
 syntax on
 filetype plugin on
 filetype indent on
 
-set history=500
-set autoread        " auto file reload
+" auto file reload
+set autoread
 set noswapfile
+set history=500
 set shell=zsh\ -i
 set laststatus=2
 set number
 
-set list            " show spaces as characters
+" show spaces as characters
+set list
 set lcs=trail:·,tab:→\ "
 
 set hlsearch
@@ -112,7 +125,7 @@ set t_Co=256
 
 set so=7
 set textwidth=79
-set timeoutlen=100
+set timeoutlen=400
 set wildmenu
 
 set clipboard=unnamed " works on mac

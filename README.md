@@ -7,7 +7,9 @@ VIM
 1) linters:
       - yamllint (pip)
       - jsonlint, eslint (npm)
-2) YouCompleteMe - needs to be compiled (https://github.com/ycm-core/YouCompleteMe#installation)
+2) coc.nvim - completion and intellisense plugin
+    2.1) python
+        - pip install python-language-server
 
 OTHER
 1) TMUX
