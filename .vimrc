@@ -44,14 +44,21 @@ Plug 'sirver/ultisnips'
 
 Plug 'itchyny/lightline.vim'
 
+" Plug 'NLKNguyen/papercolor-theme'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
   let g:lightline = {
       \ 'colorscheme': 'onehalfdark',
       \ }
 
+  " let g:lightline = {
+      " \ 'colorscheme': 'PaperColor',
+      " \ }
+
   func! _setup_colorscheme()
     set background="dark"
     colorscheme onehalfdark
+    " set background=light
+    " colorscheme PaperColor
   endfunc!
 
 Plug 'scrooloose/nerdcommenter'
@@ -81,14 +88,16 @@ Plug 'junegunn/goyo.vim'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
-Plug 'ctrlpvim/ctrlp.vim'
-  let g:ctrlp_show_hidden = 1
+  let g:fzf_layout = { 'right': '~80%' }
+  nnoremap <C-P> :Files<C-m>
 
 call plug#end()
 
 " :binds
 nnoremap <silent> <Leader>/ :noh<CR>
+
+map <leader>y "+y
+map <leader>p "+p
 
 " :settings
 
