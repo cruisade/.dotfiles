@@ -55,10 +55,13 @@ Plug 'sonph/onehalf', {'rtp': 'vim/'}
   endfunc!
 
 Plug 'scrooloose/nerdcommenter'
+  let g:NERDCreateDefaultMappings = 0
   let g:NERDSpaceDelims = 1
+
   " C-_ actually is <C-/>
-  nmap <C-_> <Plug>NERDCommenterToggle('n', 'Toggle')<Cr>
-  inoremap <C-_> <C-o>:call NERDComment(0, 'toggle')<C-m>
+  inoremap <C-_> <C-o>:call NERDComment(0, 'toggle')<C-m><C-o>j
+  nnoremap <C-_> :call NERDComment(0, 'toggle')<C-m><Cr>
+  vnoremap <C-_> :call NERDComment(0, 'toggle')<C-m>
 
 Plug 'scrooloose/nerdtree'
   let g:NERDTreeWinPos = 'right'
