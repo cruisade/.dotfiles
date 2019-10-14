@@ -21,44 +21,52 @@ Plug 'dense-analysis/ale'
   let g:ale_lint_on_text_changed = 'never'
   let g:ale_lint_on_enter = 0
 
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-  inoremap <expr> <C-J> pumvisible() ? "\<C-n>" : "\<Tab>"
-  inoremap <expr> <C-K> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+Plug 'sheerun/vim-polyglot'
+Plug 'pangloss/vim-javascript'
 
+Plug 'sirver/ultisnips'
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+  let g:UltiSnipsEnableSnipMate = 0
+  let g:UltiSnipsSnippetDirectories=[ $HOME . '/.vim/ultisnips' ]
   let g:coc_global_extensions = [
         \ 'coc-python',
         \ 'coc-json',
-        \ 'coc-ultisnips',
+        \ 'coc-tsserver',
+        \ 'coc-snippets',
         \ 'coc-yaml'
         \ ]
 
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+  let g:UltiSnipsExpandTrigger = "<nop>"
+  let g:UltiSnipsJumpForwardTrigger = '<TAB>'
+  let g:UltiSnipsJumpBackwardTrigger = '<S-TAB>'
+  let g:coc_snippet_next = '<TAB>'
+  let g:coc_snippet_prev = '<S-TAB>'
 
-Plug 'sirver/ultisnips'
-  let g:UltiSnipsExpandTrigger='<TAB>'
-  let g:UltiSnipsJumpForwardTrigger="<TAB>"
-  let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
+  inoremap <expr> <C-J> pumvisible() ? "\<C-n>" : "\<Tab>"
+  inoremap <expr> <C-K> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-  let g:UltiSnipsEnableSnipMate = 0
-  let g:UltiSnipsSnippetDirectories=[ $HOME . '/.vim/snippets' ]
+  inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+  function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+  endfunction
 
 Plug 'itchyny/lightline.vim'
 
-" Plug 'NLKNguyen/papercolor-theme'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
   let g:lightline = {
       \ 'colorscheme': 'onehalfdark',
       \ }
 
-  " let g:lightline = {
-      " \ 'colorscheme': 'PaperColor',
-      " \ }
-
   func! _setup_colorscheme()
     set background="dark"
     colorscheme onehalfdark
-    " set background=light
-    " colorscheme PaperColor
   endfunc!
 
 Plug 'scrooloose/nerdcommenter'
@@ -88,7 +96,7 @@ Plug 'junegunn/goyo.vim'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-  let g:fzf_layout = { 'right': '~80%' }
+  let g:fzf_layout = { 'down': '~40%' }
   nnoremap <C-P> :Files<C-m>
 
 call plug#end()
@@ -140,7 +148,6 @@ set textwidth=79
 set timeoutlen=400
 set wildmenu
 
-set clipboard=unnamed " works on mac
 
 " set pastetoggle=<F11>
 
