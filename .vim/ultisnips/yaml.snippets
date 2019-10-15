@@ -7,3 +7,14 @@ resources:
     cpu: ${3:250}m
     memory: ${4:128}Mi
 endsnippet
+
+snippet pod "k8s pod template" w
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ${1}
+spec:
+  containers:
+    - name: ${2}
+      image: ${3}
+endsnippet
