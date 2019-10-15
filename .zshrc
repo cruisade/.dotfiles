@@ -128,6 +128,7 @@ export TERM=xterm-256color
   alias kx='kubectl delete'
   alias kc='kubectl create'
   alias ka='kubectl apply -f '
+  alias kex='kubectl exec -it'
 
   alias kg='kubectl get'
   alias kga='kubectl get all'

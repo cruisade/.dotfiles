@@ -37,6 +37,11 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
         \ 'coc-yaml'
         \ ]
 
+  let g:fzf_action = {
+    \ 'ctrl-t': 'tab split',
+    \ 'ctrl-h': 'split',
+    \ 'ctrl-v': 'vsplit' }
+
   let g:UltiSnipsExpandTrigger = "<nop>"
   let g:UltiSnipsJumpForwardTrigger = '<TAB>'
   let g:UltiSnipsJumpBackwardTrigger = '<S-TAB>'
@@ -138,7 +143,9 @@ set tabstop=2
 set backspace=2
 set splitright
 
-set cursorline
+" cursorline slows gnome-terminal significantly
+" set cursorline
+
 set completeopt-=preview
 set nowrap
 set t_Co=256
