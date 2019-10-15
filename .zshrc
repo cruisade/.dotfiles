@@ -69,10 +69,16 @@ export TERM=xterm-256color
   export PATH=$PATH:$HOME/.zsh
 }
 
-# :setup
+# :search
 {
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+  export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+}
+
+# :setup
+{
   kubectl() {
     if ! type __start_kubectl >/dev/null 2>&1; then
         source <(command kubectl completion zsh)
@@ -80,7 +86,6 @@ export TERM=xterm-256color
 
     command kubectl "$@"
   }
-
 }
 
 # :func
