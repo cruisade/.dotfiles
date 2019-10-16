@@ -108,6 +108,7 @@ export TERM=xterm-256color
   alias py=python3
   alias python=python3
   alias pip=pip3
+  alias open='xdg-open'
 
   alias ck='create-and-change-directory'
 

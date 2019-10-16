@@ -12,17 +12,14 @@ endif
 call plug#begin('~/.vim/bundle')
 
 Plug 'dense-analysis/ale'
-  nmap <silent> <leader>a <Plug>(ale_next_wrap)
-
   " Disabling highlighting
   let g:ale_set_highlights = 0
-
-  " Only run linting when saving the file
   let g:ale_lint_on_text_changed = 'never'
   let g:ale_lint_on_enter = 0
 
+  nmap <silent> <leader>a <Plug>(ale_next_wrap)
+
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
-Plug 'sheerun/vim-polyglot'
 Plug 'pangloss/vim-javascript'
 
 Plug 'sirver/ultisnips'
@@ -31,10 +28,8 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
   let g:UltiSnipsSnippetDirectories=[ $HOME . '/.vim/ultisnips' ]
   let g:coc_global_extensions = [
         \ 'coc-python',
-        \ 'coc-json',
         \ 'coc-tsserver',
         \ 'coc-snippets',
-        \ 'coc-yaml'
         \ ]
 
   let g:fzf_action = {
@@ -63,16 +58,10 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
   endfunction
 
 Plug 'itchyny/lightline.vim'
-
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
   let g:lightline = {
       \ 'colorscheme': 'onehalfdark',
       \ }
-
-  func! _setup_colorscheme()
-    set background="dark"
-    colorscheme onehalfdark
-  endfunc!
 
 Plug 'scrooloose/nerdcommenter'
   let g:NERDCreateDefaultMappings = 0
@@ -90,18 +79,10 @@ Plug 'scrooloose/nerdtree'
   let NERDTreeQuitOnOpen=1
 
   map <leader>nn :NERDTreeToggle<cr>
-  map <leader>nb :NERDTreeFromBookmark<Space>
-  map <leader>nf :NERDTreeFind<cr>
-
-Plug 'junegunn/goyo.vim'
-  let g:goyo_width=100
-  let g:goyo_margin_top = 2
-  let g:goyo_margin_bottom = 2
-  nnoremap <silent> <leader>z :Goyo<cr>
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-  let g:fzf_layout = { 'down': '~40%' }
+  let g:fzf_layout = { 'right': '~80%' }
   nnoremap <C-P> :Files<C-m>
 
 call plug#end()
@@ -167,7 +148,8 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-call _setup_colorscheme()
+set background="dark"
+colorscheme onehalfdark
 
 " :hooks
 
