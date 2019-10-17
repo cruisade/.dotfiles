@@ -11,6 +11,12 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
+Plug 'sjl/tslime.vim'
+  let g:tslime_ensure_trailing_newlines = 1
+  let g:tslime_normal_mapping = '<leader>t'
+  let g:tslime_visual_mapping = '<leader>t'
+  let g:tslime_vars_mapping = '<leader>T'
+
 Plug 'dense-analysis/ale'
   " Disabling highlighting
   let g:ale_set_highlights = 0
@@ -103,9 +109,11 @@ filetype indent on
 set autoread
 set noswapfile
 set history=500
-set shell=zsh\ -i
 set laststatus=2
 set number
+
+" with this vim won't get suspended then executing some actions
+" set shell=/usr/bin/zsh\ -i
 
 " show spaces as characters
 set list
