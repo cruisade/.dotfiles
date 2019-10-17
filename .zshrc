@@ -73,7 +73,7 @@ export TERM=xterm-256color
 {
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-  export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
+  export FZF_DEFAULT_COMMAND='fdfind --type file --follow --hidden --exclude .git'
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 }
 
@@ -102,7 +102,7 @@ export TERM=xterm-256color
   alias v=vim
   alias vi=vim
   alias viz='vim ~/.zshrc'
-  alias viv='vim ~/.vimrc'
+  alias viv='vim ~/.vim/init.vim'
   alias zr='source ~/.zshrc && print "zsh config has been reloaded"'
   alias python2=python
   alias py=python3

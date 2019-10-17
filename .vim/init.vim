@@ -155,4 +155,3 @@ colorscheme onehalfdark
 
 " delete trailing whitespaces in any file types
 autocmd BufWritePre * :%s/\s\+$//e
-
