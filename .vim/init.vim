@@ -11,6 +11,7 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
+" LISP plugin
 Plug 'sjl/tslime.vim'
   let g:tslime_ensure_trailing_newlines = 1
   let g:tslime_normal_mapping = '<leader>t'
@@ -37,11 +38,6 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
         \ 'coc-tsserver',
         \ 'coc-snippets',
         \ ]
-
-  let g:fzf_action = {
-    \ 'ctrl-t': 'tab split',
-    \ 'ctrl-h': 'split',
-    \ 'ctrl-v': 'vsplit' }
 
   let g:UltiSnipsExpandTrigger = "<nop>"
   let g:UltiSnipsJumpForwardTrigger = '<TAB>'
@@ -90,6 +86,12 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
   let g:fzf_layout = { 'right': '~80%' }
   nnoremap <C-P> :Files<C-m>
+  nnoremap <C-E> :History<C-m>
+
+  let g:fzf_action = {
+    \ 'ctrl-t': 'tab split',
+    \ 'ctrl-h': 'split',
+    \ 'ctrl-v': 'vsplit' }
 
 call plug#end()
 
