@@ -84,9 +84,12 @@ Plug 'scrooloose/nerdtree'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-  let g:fzf_layout = { 'right': '~80%' }
+  let g:fzf_layout = { 'down': '~40%' }
+
   nnoremap <C-P> :Files<C-m>
   nnoremap <C-E> :History<C-m>
+  nnoremap <C-T> :Tags<C-m>
+  nnoremap <leader>b :call fzf#vim#tags("'".expand('<cword>'))<C-m>
 
   let g:fzf_action = {
     \ 'ctrl-t': 'tab split',
@@ -134,8 +137,10 @@ set tabstop=2
 set backspace=2
 set splitright
 
-" cursorline slows gnome-terminal significantly
-" set cursorline
+" cursorline slows vim significantly
+if has('nvim')
+  set cursorline
+endif
 
 set completeopt-=preview
 set nowrap
