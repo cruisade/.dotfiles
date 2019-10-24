@@ -99,7 +99,7 @@ export TERM=xterm-256color
 # :alias
 {
   alias sudo='sudo '
-  alias v='nvim .'
+  alias v='nvim'
   alias viz='nvim ~/.zshrc'
   alias viv='nvim ~/.vim/init.vim'
   alias zr='source ~/.zshrc && print "zsh config has been reloaded"'

@@ -11,8 +11,7 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
-" LISP plugin
-Plug 'sjl/tslime.vim'
+Plug 'sjl/tslime.vim'                 " Lisp plugin (send code to tmux window)
   let g:tslime_ensure_trailing_newlines = 1
   let g:tslime_normal_mapping = '<leader>t'
   let g:tslime_visual_mapping = '<leader>t'
@@ -26,24 +25,18 @@ Plug 'dense-analysis/ale'
 
   nmap <silent> <leader>a <Plug>(ale_next_wrap)
 
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
-Plug 'pangloss/vim-javascript'
-
 Plug 'sirver/ultisnips'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
   let g:UltiSnipsEnableSnipMate = 0
   let g:UltiSnipsSnippetDirectories=[ $HOME . '/.vim/ultisnips' ]
-  let g:coc_global_extensions = [
-        \ 'coc-python',
-        \ 'coc-tsserver',
-        \ 'coc-snippets',
-        \ ]
+  let g:coc_global_extensions = [ 'coc-snippets' ]
+  let g:UltiSnipsEditSplit="horizontal"
 
   let g:UltiSnipsExpandTrigger = "<nop>"
-  let g:UltiSnipsJumpForwardTrigger = '<TAB>'
-  let g:UltiSnipsJumpBackwardTrigger = '<S-TAB>'
-  let g:coc_snippet_next = '<TAB>'
-  let g:coc_snippet_prev = '<S-TAB>'
+  " let g:UltiSnipsJumpForwardTrigger = '<TAB>'
+  " let g:UltiSnipsJumpBackwardTrigger = '<S-TAB>'
+  let g:coc_snippet_next = '<C-J>'
+  let g:coc_snippet_prev = '<C-K>'
 
   inoremap <expr> <C-J> pumvisible() ? "\<C-n>" : "\<Tab>"
   inoremap <expr> <C-K> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -89,6 +82,8 @@ Plug 'junegunn/fzf.vim'
   nnoremap <C-P> :Files<C-m>
   nnoremap <C-E> :History<C-m>
   nnoremap <C-T> :Tags<C-m>
+  " nnoremap <A-T> :BTags<C-m>
+  nnoremap <M-t> :BTags<C-m>
   nnoremap <leader>b :call fzf#vim#tags("'".expand('<cword>'))<C-m>
 
   let g:fzf_action = {
@@ -96,13 +91,25 @@ Plug 'junegunn/fzf.vim'
     \ 'ctrl-h': 'split',
     \ 'ctrl-v': 'vsplit' }
 
+Plug 'markonm/traces.vim'             " Search highlighting plugin
+Plug 'Raimondi/delimitMate'           " autoclosing bracets
+
 call plug#end()
 
 " :binds
 nnoremap <silent> <Leader>/ :noh<CR>
 
-map <leader>y "+y
-map <leader>p "+p
+" copy / paste
+vnoremap y "+y
+nnoremap p "+p
+
+vnoremap x "+x
+nnoremap x "+x
+
+nnoremap d "_d
+vnoremap d "_d
+nnoremap D "_D
+vnoremap D "_D
 
 " :settings
 
@@ -150,7 +157,6 @@ set so=7
 set textwidth=79
 set timeoutlen=400
 set wildmenu
-
 
 " set pastetoggle=<F11>
 
