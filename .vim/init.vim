@@ -93,6 +93,7 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'markonm/traces.vim'             " Search highlighting plugin
 Plug 'Raimondi/delimitMate'           " autoclosing bracets
+Plug 'ludovicchabant/vim-gutentags'   " auto ctags (re)load
 
 call plug#end()
 
