@@ -33,8 +33,8 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
   let g:UltiSnipsEditSplit="horizontal"
 
   let g:UltiSnipsExpandTrigger = "<nop>"
-  " let g:UltiSnipsJumpForwardTrigger = '<TAB>'
-  " let g:UltiSnipsJumpBackwardTrigger = '<S-TAB>'
+  let g:UltiSnipsJumpForwardTrigger = '<C-J>'
+  let g:UltiSnipsJumpBackwardTrigger = '<C-K>'
   let g:coc_snippet_next = '<C-J>'
   let g:coc_snippet_prev = '<C-K>'
 
@@ -81,9 +81,8 @@ Plug 'junegunn/fzf.vim'
 
   nnoremap <C-P> :Files<C-m>
   nnoremap <C-E> :History<C-m>
-  nnoremap <C-T> :Tags<C-m>
-  " nnoremap <A-T> :BTags<C-m>
-  nnoremap <M-t> :BTags<C-m>
+  nnoremap <C-T> :BTags<C-m>
+  nnoremap <C-O> :Tags<C-m>
   nnoremap <leader>b :call fzf#vim#tags("'".expand('<cword>'))<C-m>
 
   let g:fzf_action = {
@@ -93,7 +92,8 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'markonm/traces.vim'             " Search highlighting plugin
 Plug 'Raimondi/delimitMate'           " autoclosing bracets
-Plug 'ludovicchabant/vim-gutentags'   " auto ctags (re)load
+Plug 'ludovicchabant/vim-gutentags'
+  let g:gutentags_ctags_tagfile = '.tags'
 
 call plug#end()
 
@@ -132,6 +132,8 @@ set number
 set list
 set lcs=trail:·,tab:→\ "
 
+set tags=./.tags;/
+
 set hlsearch
 set incsearch
 set ignorecase
@@ -146,9 +148,9 @@ set backspace=2
 set splitright
 
 " cursorline slows vim significantly
-if has('nvim')
-  set cursorline
-endif
+" if has('nvim')
+  " set cursorline
+" endif
 
 set completeopt-=preview
 set nowrap

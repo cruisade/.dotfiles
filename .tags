@@ -1,0 +1,56 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+<C-E>	.vim/init.vim	/^  nnoremap <C-E> :History<C-m>$/;"	m
+<C-J>	.vim/init.vim	/^  inoremap <expr> <C-J> pumvisible() ? "\\<C-n>" : "\\<Tab>"$/;"	m
+<C-K>	.vim/init.vim	/^  inoremap <expr> <C-K> pumvisible() ? "\\<C-p>" : "\\<S-Tab>"$/;"	m
+<C-O>	.vim/init.vim	/^  nnoremap <C-O> :Tags<C-m>$/;"	m
+<C-P>	.vim/init.vim	/^  nnoremap <C-P> :Files<C-m>$/;"	m
+<C-T>	.vim/init.vim	/^  nnoremap <C-T> :BTags<C-m>$/;"	m
+<C-_>	.vim/init.vim	/^  inoremap <C-_> <C-o>:call NERDComment(0, 'toggle')<C-m><C-o>j$/;"	m
+<C-_>	.vim/init.vim	/^  nnoremap <C-_> :call NERDComment(0, 'toggle')<C-m><Cr>$/;"	m
+<C-_>	.vim/init.vim	/^  vnoremap <C-_> :call NERDComment(0, 'toggle')<C-m>$/;"	m
+<Leader>/	.vim/init.vim	/^nnoremap <silent> <Leader>\/ :noh<CR>$/;"	m
+<TAB>	.vim/init.vim	/^  inoremap <silent><expr> <TAB>$/;"	m
+<leader>a	.vim/init.vim	/^  nmap <silent> <leader>a <Plug>(ale_next_wrap)$/;"	m
+<leader>b	.vim/init.vim	/^  nnoremap <leader>b :call fzf#vim#tags("'".expand('<cword>'))<C-m>$/;"	m
+<leader>nn	.vim/init.vim	/^  map <leader>nn :NERDTreeToggle<cr>$/;"	m
+D	.vim/init.vim	/^nnoremap D "_D$/;"	m
+D	.vim/init.vim	/^vnoremap D "_D$/;"	m
+NERDTreeQuitOnOpen	.vim/init.vim	/^  let NERDTreeQuitOnOpen=1$/;"	v
+NERDTreeShowHidden	.vim/init.vim	/^  let NERDTreeShowHidden=1$/;"	v
+check_back_space	.vim/init.vim	/^  function! s:check_back_space() abort$/;"	f
+d	.vim/init.vim	/^nnoremap d "_d$/;"	m
+d	.vim/init.vim	/^vnoremap d "_d$/;"	m
+g:NERDCreateDefaultMappings	.vim/init.vim	/^  let g:NERDCreateDefaultMappings = 0$/;"	v
+g:NERDSpaceDelims	.vim/init.vim	/^  let g:NERDSpaceDelims = 1$/;"	v
+g:NERDTreeWinPos	.vim/init.vim	/^  let g:NERDTreeWinPos = 'right'$/;"	v
+g:NERDTreeWinSize	.vim/init.vim	/^  let g:NERDTreeWinSize=35$/;"	v
+g:UltiSnipsEditSplit	.vim/init.vim	/^  let g:UltiSnipsEditSplit="horizontal"$/;"	v
+g:UltiSnipsEnableSnipMate	.vim/init.vim	/^  let g:UltiSnipsEnableSnipMate = 0$/;"	v
+g:UltiSnipsExpandTrigger	.vim/init.vim	/^  let g:UltiSnipsExpandTrigger = "<nop>"$/;"	v
+g:UltiSnipsJumpBackwardTrigger	.vim/init.vim	/^  let g:UltiSnipsJumpBackwardTrigger = '<C-K>'$/;"	v
+g:UltiSnipsJumpForwardTrigger	.vim/init.vim	/^  let g:UltiSnipsJumpForwardTrigger = '<C-J>'$/;"	v
+g:UltiSnipsSnippetDirectories	.vim/init.vim	/^  let g:UltiSnipsSnippetDirectories=[ $HOME . '\/.vim\/ultisnips' ]$/;"	v
+g:ale_lint_on_enter	.vim/init.vim	/^  let g:ale_lint_on_enter = 0$/;"	v
+g:ale_lint_on_text_changed	.vim/init.vim	/^  let g:ale_lint_on_text_changed = 'never'$/;"	v
+g:ale_set_highlights	.vim/init.vim	/^  let g:ale_set_highlights = 0$/;"	v
+g:coc_global_extensions	.vim/init.vim	/^  let g:coc_global_extensions = [ 'coc-snippets' ]$/;"	v
+g:coc_snippet_next	.vim/init.vim	/^  let g:coc_snippet_next = '<C-J>'$/;"	v
+g:coc_snippet_prev	.vim/init.vim	/^  let g:coc_snippet_prev = '<C-K>'$/;"	v
+g:fzf_action	.vim/init.vim	/^  let g:fzf_action = {$/;"	v
+g:fzf_layout	.vim/init.vim	/^  let g:fzf_layout = { 'down': '~40%' }$/;"	v
+g:gutentags_ctags_tagfile	.vim/init.vim	/^  let g:gutentags_ctags_tagfile = '.tags'$/;"	v
+g:lightline	.vim/init.vim	/^  let g:lightline = {$/;"	v
+g:tslime_ensure_trailing_newlines	.vim/init.vim	/^  let g:tslime_ensure_trailing_newlines = 1$/;"	v
+g:tslime_normal_mapping	.vim/init.vim	/^  let g:tslime_normal_mapping = '<leader>t'$/;"	v
+g:tslime_vars_mapping	.vim/init.vim	/^  let g:tslime_vars_mapping = '<leader>T'$/;"	v
+g:tslime_visual_mapping	.vim/init.vim	/^  let g:tslime_visual_mapping = '<leader>t'$/;"	v
+mapleader	.vim/init.vim	/^let mapleader=','$/;"	v
+p	.vim/init.vim	/^nnoremap p "+p$/;"	m
+x	.vim/init.vim	/^nnoremap x "+x$/;"	m
+x	.vim/init.vim	/^vnoremap x "+x$/;"	m
+y	.vim/init.vim	/^vnoremap y "+y$/;"	m
