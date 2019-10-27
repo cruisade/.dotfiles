@@ -1,5 +1,5 @@
 [user]
-  email = cuzmin.dmitry@gmail.com 
+  email = cuzmin.dmitry@gmail.com
   name = gfx687
 [credential]
   helper = cache --timeout=360000

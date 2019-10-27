@@ -54,9 +54,7 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 Plug 'itchyny/lightline.vim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
-  let g:lightline = {
-      \ 'colorscheme': 'onehalfdark',
-      \ }
+  let g:lightline = { 'colorscheme': 'onehalfdark' }
 
 Plug 'scrooloose/nerdcommenter'
   let g:NERDCreateDefaultMappings = 0
