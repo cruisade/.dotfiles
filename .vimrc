@@ -90,8 +90,13 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'markonm/traces.vim'             " Search highlighting plugin
 Plug 'Raimondi/delimitMate'           " autoclosing bracets
+
 Plug 'ludovicchabant/vim-gutentags'
   let g:gutentags_ctags_tagfile = '.tags'
+
+Plug 'vim-scripts/surround.vim'
+  vmap ( S)i
+  vmap ) S)%a
 
 call plug#end()
 
