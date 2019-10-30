@@ -112,8 +112,7 @@ export TERM=xterm-256color
 
   alias ck='create-and-change-directory'
 
-  alias l='ls -1A'
-  alias ll='ls -1Al'
+  alias l='ls -1Al'
 
   # :alias-git
   alias gl='git log --oneline --graph --decorate --all --max-count=30'

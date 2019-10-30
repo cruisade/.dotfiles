@@ -61,9 +61,9 @@ Plug 'scrooloose/nerdcommenter'
   let g:NERDSpaceDelims = 1
 
   " C-_ actually is <C-/>
-  inoremap <C-_> <C-o>:call NERDComment(0, 'toggle')<C-m><C-o>j
-  nnoremap <C-_> :call NERDComment(0, 'toggle')<C-m><Cr>
-  vnoremap <C-_> :call NERDComment(0, 'toggle')<C-m>
+  inoremap <C-_> <C-o>:call NERDComment(0, 'toggle')<Cr><C-o>j
+  nnoremap <C-_> :call NERDComment(0, 'toggle')<Cr><Cr>
+  vnoremap <C-_> :call NERDComment(0, 'toggle')<Cr>
 
 Plug 'scrooloose/nerdtree'
   let g:NERDTreeWinPos = 'right'
@@ -77,16 +77,11 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
   let g:fzf_layout = { 'down': '~40%' }
 
-  nnoremap <C-P> :Files<C-m>
-  nnoremap <C-E> :History<C-m>
-  nnoremap <C-T> :BTags<C-m>
-  nnoremap <C-O> :Tags<C-m>
-  nnoremap <leader>b :call fzf#vim#tags("'".expand('<cword>'))<C-m>
-
-  let g:fzf_action = {
-    \ 'ctrl-t': 'tab split',
-    \ 'ctrl-h': 'split',
-    \ 'ctrl-v': 'vsplit' }
+  nnoremap <C-P> :Files<Cr>
+  nnoremap <C-E> :History<Cr>
+  nnoremap <C-T> :BTags<Cr>
+  nnoremap <C-O> :Tags<Cr>
+  nnoremap <leader>b :call fzf#vim#tags("'".expand('<cword>'))<Cr>
 
 Plug 'markonm/traces.vim'             " Search highlighting plugin
 Plug 'Raimondi/delimitMate'           " autoclosing bracets
@@ -97,6 +92,10 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'vim-scripts/surround.vim'
   vmap ( S)i
   vmap ) S)%a
+
+Plug 'tpope/vim-fugitive'
+  nnoremap <leader>gd :Gdiff<CR>
+  nnoremap <leader>gs :G<CR>
 
 call plug#end()
 
@@ -129,7 +128,7 @@ set laststatus=2
 set number
 
 " with this vim won't get suspended then executing some actions
-" set shell=/usr/bin/zsh\ -i
+set shell=/usr/local/bin/zsh\ -i
 
 " show spaces as characters
 set list
