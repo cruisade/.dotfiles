@@ -117,8 +117,7 @@ vnoremap D "_D
 " :settings
 
 syntax on
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 " auto file reload
 set autoread
@@ -156,12 +155,14 @@ set splitright
 
 set completeopt-=preview
 set nowrap
-set t_Co=256
+" set t_Co=256
 
 set so=7
 set textwidth=79
 set timeoutlen=400
 set wildmenu
+set number
+set relativenumber
 
 " set pastetoggle=<F11>
 
@@ -178,6 +179,7 @@ set background="dark"
 colorscheme onehalfdark
 
 " :hooks
-
-" delete trailing whitespaces in any file types
-autocmd BufWritePre * :%s/\s\+$//e
+augroup _buf_write_pre
+  autocmd!
+  autocmd BufWritePre * :%s/\s\+$//e
+augroup end
