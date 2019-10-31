@@ -66,6 +66,12 @@ export TERM=xterm-256color
     chmod +x $HOME/.zsh/diff-so-fancy
   fi
 
+  if [ ! -f "$HOME/.zsh/git-log-compact" ]; then
+    curl -s 'https://raw.githubusercontent.com/mackyle/git-log-compact/b17e4ec6f6e1ddb206c6a6ab24f053798790f32b/git-log-compact' --output "$HOME/.zsh/git-log-compact"
+
+    chmod +x $HOME/.zsh/git-log-compact
+  fi
+
   export PATH=$PATH:$HOME/.zsh
 }
 
@@ -114,7 +120,7 @@ export TERM=xterm-256color
   alias l='ls -1Al'
 
   # :alias-git
-  alias gl='git log --oneline --graph --decorate --all --max-count=30'
+  alias gl='git-log-compact --graph --max-count=30 --all'
   alias gc!='git commit --amend --reuse-message HEAD'
   alias gca='git add .; git commit --all'
   alias gca!='git add .; git commit --all --amend --reuse-message HEAD'

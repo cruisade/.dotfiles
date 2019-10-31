@@ -105,6 +105,7 @@ nnoremap <silent> <Leader>/ :noh<CR>
 " copy / paste
 vnoremap y "+y
 nnoremap p "+p
+nnoremap P "+P
 
 vnoremap x "+x
 nnoremap x "+x
