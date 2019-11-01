@@ -120,7 +120,7 @@ export TERM=xterm-256color
   alias l='ls -1Al'
 
   # :alias-git
-  alias gl='git-log-compact --graph --max-count=30 --all'
+  alias gl='git-log-compact --graph --max-count=30 --all --decorate'
   alias gc!='git commit --amend --reuse-message HEAD'
   alias gca='git add .; git commit --all'
   alias gca!='git add .; git commit --all --amend --reuse-message HEAD'

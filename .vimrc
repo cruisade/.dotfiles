@@ -79,6 +79,7 @@ Plug 'junegunn/fzf.vim'
 
   nnoremap <C-P> :Files<Cr>
   nnoremap <C-E> :History<Cr>
+  nnoremap <C-F> :Ag<Cr>
   nnoremap <C-T> :BTags<Cr>
   nnoremap <C-O> :Tags<Cr>
   nnoremap <leader>b :call fzf#vim#tags("'".expand('<cword>'))<Cr>
@@ -92,10 +93,6 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'vim-scripts/surround.vim'
   vmap ( S)i
   vmap ) S)%a
-
-Plug 'tpope/vim-fugitive'
-  nnoremap <leader>gd :Gdiff<CR>
-  nnoremap <leader>gs :G<CR>
 
 call plug#end()
 
