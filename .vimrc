@@ -78,7 +78,7 @@ Plug 'junegunn/fzf.vim'
   let g:fzf_layout = { 'down': '~40%' }
 
   nnoremap <C-P> :Files<Cr>
-  nnoremap <C-E> :History<Cr>
+  nnoremap <C-E> :Buffers<Cr>
   nnoremap <C-F> :Ag<Cr>
   nnoremap <C-T> :BTags<Cr>
   nnoremap <C-O> :Tags<Cr>
