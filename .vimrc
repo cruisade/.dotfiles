@@ -99,10 +99,22 @@ call plug#end()
 " :binds
 nnoremap <silent> <Leader>/ :noh<CR>
 
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+inoremap <up>    <nop>
+inoremap <down>  <nop>
+inoremap <left>  <nop>
+inoremap <right> <nop>
+
 " copy / paste
 vnoremap y "+y
 nnoremap p "+p
 nnoremap P "+P
+nnoremap <leader>p o<ESC>"+p
+nnoremap <leader>P o<ESC>"+P
+
 
 vnoremap x "+x
 nnoremap x "+x
