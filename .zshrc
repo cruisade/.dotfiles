@@ -109,11 +109,7 @@ export TERM=xterm-256color
   alias viz='nvim ~/.zshrc'
   alias viv='nvim ~/.vimrc'
   alias zr='source ~/.zshrc && print "zsh config has been reloaded"'
-  alias python2=python
   alias py=python3
-  alias python=python3
-  alias pip=pip3
-  alias open='xdg-open'
 
   alias ck='create-and-change-directory'
 
@@ -125,7 +121,7 @@ export TERM=xterm-256color
   alias gca='git add .; git commit --all'
   alias gca!='git add .; git commit --all --amend --reuse-message HEAD'
 
-  alias gd='git diff'
+  alias gd='gwd && echo -e "\n\033[1;33mSTATUS:" && gws -uall'
   alias gdo='git diff origin/master'
 
   # :alias-kubectl
