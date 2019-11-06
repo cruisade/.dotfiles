@@ -129,15 +129,14 @@ vnoremap D "_D
 syntax on
 filetype plugin indent on
 
-" auto file reload
 set autoread
 set noswapfile
 set history=500
 set laststatus=2
 set number
 
-" with this vim won't get suspended then executing some actions
-set shell=/usr/local/bin/zsh\ -i
+" with this line commented vim won't get suspended then executing some actions
+set shell=/usr/bin/zsh\ -i
 
 " show spaces as characters
 set list
@@ -158,14 +157,8 @@ set tabstop=2
 set backspace=2
 set splitright
 
-" cursorline slows vim significantly
-" if has('nvim')
-  " set cursorline
-" endif
-
 set completeopt-=preview
 set nowrap
-" set t_Co=256
 
 set so=7
 set textwidth=79
@@ -174,10 +167,10 @@ set wildmenu
 set number
 set relativenumber
 
-" set pastetoggle=<F11>
-
 set undodir=~/.vim/tempdirs/undodir
 set undofile
+
+set hidden
 
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
