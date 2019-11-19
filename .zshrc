@@ -40,6 +40,8 @@ export TERM=xterm-256color
     ZSH_AUTOSUGGEST_STRATEGY=("history")
     zgen load zsh-users/zsh-autosuggestions && _zsh_autosuggest_start
 
+    zgen load paulirish/git-open
+
     zgen save
   fi
 }
@@ -123,6 +125,8 @@ export TERM=xterm-256color
 
   alias gd='gwd && echo -e "\n\033[1;33mSTATUS:" && gws -uall'
   alias gdo='git diff origin/master'
+
+  alias gRo='git open'
 
   # :alias-kubectl
   alias k=kubectl
