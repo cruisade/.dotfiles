@@ -98,6 +98,7 @@ call plug#end()
 
 " :binds
 nnoremap <silent> <Leader>/ :noh<CR>
+nnoremap <silent> <Leader>fj :%!jq .<CR>
 
 nnoremap J 9j<Cr>
 nnoremap K 11k<Cr>
