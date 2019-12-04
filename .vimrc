@@ -90,6 +90,9 @@ Plug 'Raimondi/delimitMate'           " autoclosing bracets
 Plug 'ludovicchabant/vim-gutentags'
   let g:gutentags_ctags_tagfile = '.tags'
 
+Plug 'majutsushi/tagbar'
+  nnoremap <C-G> :TagbarToggle<Cr>
+
 Plug 'vim-scripts/surround.vim'
   vmap ( S)i
   vmap ) S)%a
