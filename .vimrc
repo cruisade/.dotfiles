@@ -134,6 +134,7 @@ vnoremap D "_D
 syntax on
 filetype plugin indent on
 
+set mouse=a
 set autoread
 set noswapfile
 set history=500
