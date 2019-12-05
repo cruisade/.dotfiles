@@ -1,4 +1,4 @@
-set $mod Mod
+set $mod Mod4
 
 # Screen Shots
 bindsym Control+Print exec gnome-screenshot -i
