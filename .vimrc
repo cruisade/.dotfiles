@@ -69,7 +69,7 @@ Plug 'scrooloose/nerdtree'
   let g:NERDTreeWinPos = 'right'
   let NERDTreeShowHidden=1
   let g:NERDTreeWinSize=35
-  let NERDTreeQuitOnOpen=1
+  " let NERDTreeQuitOnOpen=1
 
   map <leader>nn :NERDTreeToggle<cr>
 
