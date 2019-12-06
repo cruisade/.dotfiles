@@ -38,19 +38,28 @@ bindsym $mod+f fullscreen toggle
 font pango:monospace 8
 
 # switch to workspace
-bindsym $mod+1 workspace "1"
-bindsym $mod+2 workspace "2"
-bindsym $mod+3 workspace "3"
-bindsym $mod+q workspace "(q) Mail"
-bindsym $mod+w workspace "w"
-bindsym $mod+e workspace "e"
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+q workspace q
+bindsym $mod+w workspace w
+bindsym $mod+e workspace e
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace "1"
-bindsym $mod+Shift+2 move container to workspace "2"
-bindsym $mod+Shift+3 move container to workspace "3"
-bindsym $mod+Shift+w move container to workspace "w"
-bindsym $mod+Shift+e move container to workspace "e"
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+w move container to workspace w
+bindsym $mod+Shift+e move container to workspace e
+
+# pin workspaces to monitors
+set $primary DP-1
+set $secondary DP-2
+
+workspace 1 output $secondary
+workspace 2 output $primary
+workspace 3 output $primary
+workspace q output $secondary
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
