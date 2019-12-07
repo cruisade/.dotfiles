@@ -112,7 +112,7 @@ export TERM=xterm-256color
   alias viv='nvim ~/.vimrc'
   alias zr='source ~/.zshrc && print "zsh config has been reloaded"'
   alias py=python3
-
+  alias emacst='emacs --no-window-system '
   alias ck='create-and-change-directory'
 
   alias l='ls -1Al'
