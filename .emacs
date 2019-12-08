@@ -4,8 +4,7 @@
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
 
-(define-key global-map "\C-n" 'org-insert-todo-heading)
-(define-key global-map "\C-t" 'org-todo)
+(global-set-key (kbd "C-w") 'backward-kill-word)
 
 ; disable backup files
 (setq make-backup-files nil)
