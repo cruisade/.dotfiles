@@ -1,7 +1,5 @@
 exec "xrandr --output DP-1 --right-of DP-2"
-exec "setxkbmap -option ctrl:nocaps"
-exec "setxkbmap -layout us,ru"
-exec "setxkbmap -option 'grp:win_space_toggle'"
+exec "setxkbmap -option ctrl:nocaps -layout us,ru -option 'grp:win_space_toggle'"
 
 set $mod Mod4
 
