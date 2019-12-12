@@ -4,6 +4,9 @@ exec "setxkbmap -option ctrl:nocaps -layout us,ru -option 'grp:win_space_toggle'
 set $mod Mod4
 font pango:monospace 9
 
+set $right DP-1
+set $left DP-2
+
 
 # binds
 bindsym Control+Print exec gnome-screenshot -i
@@ -34,6 +37,9 @@ bindsym $mod+l exec "i3lock -c 000000"
 
 bindsym $mod+f fullscreen toggle
 
+bindsym $mod+m move workspace to output $right
+bindsym $mod+Shift+m move workspace to output $left
+
 
 # configure workspaces
 bindsym $mod+1 workspace 1
@@ -56,13 +62,10 @@ bindsym $mod+Shift+a move container to workspace a
 bindsym $mod+Shift+s move container to workspace s
 bindsym $mod+Shift+d move container to workspace d
 
-set $primary DP-1
-set $secondary DP-2
-
-workspace 1 output $secondary
-workspace 2 output $primary
-workspace 3 output $primary
-workspace q output $secondary
+workspace 1 output $left
+workspace 2 output $right
+workspace 3 output $right
+workspace q output $left
 
 
 # status bar configuration
