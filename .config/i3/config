@@ -1,5 +1,7 @@
 exec "xrandr --output DP-1 --right-of DP-2"
 exec "setxkbmap -option ctrl:nocaps -layout us,ru -option 'grp:win_space_toggle'"
+exec --no-startup-id feh --bg-fill ~/.dotfiles/wallpaper.jpg
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 set $mod Mod4
 font pango:monospace 9
@@ -68,21 +70,14 @@ workspace 3 output $right
 workspace q output $left
 
 
-# status bar configuration
-bar {
-  position top
-  status_command i3status
-  tray_output LVDS
-  colors {
-    background #232323
-    statusline #DCDCDC
-  }
-}
-
-
 # colors
 client.focused          #3F8AC2 #096BAA #00BAA7 #00DA8E
 client.focused_inactive #333333 #5F676A #ffffff #484e50
 client.unfocused        #333333 #424242 #888888 #292d2e
 client.urgent           #C10004 #900000 #ffffff #900000
 
+
+# gaps
+gaps inner 5
+# gaps outer 2
+for_window [class=".*"] border pixel 0
