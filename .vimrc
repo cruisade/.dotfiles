@@ -56,6 +56,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
   let g:lightline = { 'colorscheme': 'onehalfdark' }
 
+Plug 'arcticicestudio/nord-vim'
+
 Plug 'scrooloose/nerdcommenter'
   let g:NERDCreateDefaultMappings = 0
   let g:NERDSpaceDelims = 1
@@ -188,7 +190,7 @@ if exists('+termguicolors')
 endif
 
 set background="dark"
-colorscheme onehalfdark
+colorscheme nord
 
 " :hooks
 augroup _buf_write_pre
