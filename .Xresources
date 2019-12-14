@@ -1,0 +1,2 @@
+rofi.font: Fira Code 12
+rofi.theme: ~/.dotfiles/.config/rofi/nord.rasi
