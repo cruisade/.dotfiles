@@ -1,6 +1,6 @@
 exec "xrandr --output DP-1 --right-of DP-2"
 exec "setxkbmap -option ctrl:nocaps -layout us,ru -option 'grp:win_space_toggle'"
-exec --no-startup-id feh --bg-fill ~/.dotfiles/wallpaper-firewatch-gray.jpg
+exec --no-startup-id feh --bg-fill ~/.dotfiles/wallpaper.jpg
 exec_always --no-startup-id $HOME/.config/polybar/polybar.sh
 
 set $mod Mod4

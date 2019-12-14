@@ -7,6 +7,7 @@
     foregroundcolor: #839496;
     foregroundcolorinverse: #839496;
     selectioncolor: #3b4252;
+    highlightcolor: #81a1c1;
 
 
     font-size: 1px;
@@ -45,6 +46,7 @@
     border: 0 0 1 0;
     border-color: @separatorcolor;
     background-color: @backgroundcoloralternate;
+    highlight: underline bold #81a1c1;
 }
 
 #element.selected.normal {
@@ -60,9 +62,11 @@
     background-color: @backgroundcoloralternate;
 }
 
+/*
 #element.normal.active {
     background-color: #434c5e;
 }
+*/
 
 #element.alternate.active {
     background-color: #434c5e;
@@ -88,6 +92,7 @@
     padding: 16;
     background-color: @backgroundcoloralternate;
     border: 0 1 0 0;
+    text-color: @highlightcolor;
 }
 
 #entry {
