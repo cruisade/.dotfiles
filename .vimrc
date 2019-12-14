@@ -52,11 +52,9 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
     return !col || getline('.')[col - 1]  =~# '\s'
   endfunction
 
-Plug 'itchyny/lightline.vim'
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
-  let g:lightline = { 'colorscheme': 'onehalfdark' }
-
 Plug 'arcticicestudio/nord-vim'
+Plug 'itchyny/lightline.vim'
+  let g:lightline = { 'colorscheme': 'nord' }
 
 Plug 'scrooloose/nerdcommenter'
   let g:NERDCreateDefaultMappings = 0

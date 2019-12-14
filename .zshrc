@@ -81,6 +81,20 @@ export TERM=xterm-256color
 {
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+  export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+    --color fg:#D8DEE9
+    --color bg:#2E3440
+    --color fg+:#D8DEE9
+    --color bg+:#434C5E
+    --color info:#4C566A
+    --color spinner:#4C566A
+    --color header:#4C566A
+    --color prompt:#81A1C1
+    --color marker:#a3be8c
+    --color pointer:#81a1c1
+    --color hl:#81a1c1
+    --color hl+:#81a1c1
+  '
   export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 }
