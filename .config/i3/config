@@ -30,8 +30,8 @@ bindcode $mod+48 layout toggle split
 bindcode $mod+47 layout tabbed
 bindcode $mod+Ctrl+47 layout stacking
 
-bindsym $mod+Tab exec "rofi -theme ~/.dotfiles/.config/rofi/onedark.rasi -show window"
-bindsym $mod+Ctrl+Tab exec "rofi -theme ~/.dotfiles/.config/rofi/onedark.rasi -combi-modi drun,run -show combi"
+bindsym $mod+Tab exec "rofi -theme ~/.dotfiles/.config/rofi/nord.rasi -show window"
+bindsym $mod+Ctrl+Tab exec "rofi -theme ~/.dotfiles/.config/rofi/nord.rasi -combi-modi drun,run -show combi"
 bindsym $mod+Ctrl+c reload
 bindsym $mod+Ctrl+r restart
 bindsym $mod+Ctrl+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
@@ -78,6 +78,6 @@ client.urgent           #C10004 #900000 #ffffff #900000
 
 
 # gaps
-gaps inner 5
+gaps inner 10
 # gaps outer 2
 for_window [class=".*"] border pixel 0
