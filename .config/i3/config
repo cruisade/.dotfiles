@@ -32,10 +32,7 @@ bindcode $mod+Ctrl+47 layout stacking
 
 bindsym $mod+Tab exec "rofi -show window"
 bindsym $mod+Ctrl+Tab exec "rofi -combi-modi drun,run -show combi"
-bindsym $mod+Ctrl+c reload
-bindsym $mod+Ctrl+r restart
-bindsym $mod+Ctrl+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+l exec "i3lock -c 000000"
+bindsym $mod+l exec "i3lock -i ~/.dotfiles/wallpaper-lock.png'
 
 bindsym $mod+f fullscreen toggle
 
