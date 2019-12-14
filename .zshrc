@@ -53,10 +53,14 @@ export TERM=xterm-256color
     git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
   fi
 
-  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=241"
-  PURE_PROMPT_SYMBOL='➔'
   fpath+=("$HOME/.zsh/pure")
+
   autoload -U promptinit; promptinit
+
+  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=241"
+  zstyle ':prompt:pure:prompt:*' color '#81A1C1'
+  zstyle ':prompt:pure:path' color '#81A1C1'
+
   prompt pure
 }
 
