@@ -13,6 +13,9 @@ export TERM=xterm-256color
         'history-substring-search' \
         'history'
 
+  setopt globdots
+  setopt menu_complete
+
   zstyle ':completion:*' rehash true
 }
 
