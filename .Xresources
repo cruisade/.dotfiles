@@ -65,3 +65,12 @@
 ! :rofi
 rofi.font: Fira Code 12
 rofi.theme: ~/.dotfiles/.config/rofi/nord.rasi
+
+
+! urxvt
+URxvt.font: xft:Fira Code:size=6
+! URxvt.lineSpace: -1
+URxvt.letterSpace: 1
+URxvt.scrollBar: false
+URxvt.iso14755: false
+URxvt.iso14755_52: false
