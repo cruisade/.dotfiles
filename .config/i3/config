@@ -1,7 +1,7 @@
 exec "xrandr --output DP-1 --right-of DP-2"
 exec "setxkbmap -option ctrl:nocaps -layout us,ru -option 'grp:win_space_toggle'"
 exec --no-startup-id feh --bg-fill ~/.dotfiles/wallpaper.jpg
-exec_always --no-startup-id $HOME/.config/polybar/polybar.sh
+exec_always --no-startup-id $HOME/.dotfiles/.config/polybar/polybar.sh
 
 set $mod Mod4
 font pango:monospace 9
@@ -32,7 +32,7 @@ bindcode $mod+Ctrl+47 layout stacking
 
 bindsym $mod+Tab exec "rofi -show window"
 bindsym $mod+Ctrl+Tab exec "rofi -combi-modi drun,run -show combi"
-bindsym $mod+l exec "i3lock -i ~/.dotfiles/wallpaper-lock.png'
+bindsym $mod+l exec "i3lock -c 000000'
 
 bindsym $mod+f fullscreen toggle
 
