@@ -1,3 +1,6 @@
 .spacemacs
 .Xresources
 .config/alacritty
+.tmux.conf
+.vimrc
+.vim/ultisnips

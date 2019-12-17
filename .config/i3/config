@@ -32,7 +32,7 @@ bindcode $mod+Ctrl+47 layout stacking
 
 bindsym $mod+Tab exec "rofi -show window"
 bindsym $mod+Ctrl+Tab exec "rofi -combi-modi drun,run -show combi"
-bindsym $mod+l exec "i3lock -c 000000'
+bindsym $mod+l exec "i3lock -c 000000"
 
 bindsym $mod+f fullscreen toggle
 
