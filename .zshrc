@@ -61,8 +61,8 @@ export TERM=xterm-256color
   autoload -U promptinit; promptinit
 
   ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=241"
-  zstyle ':prompt:pure:prompt:*' color '#81A1C1'
-  zstyle ':prompt:pure:path' color '#81A1C1'
+  zstyle ':prompt:pure:prompt:*' color cyan
+  zstyle ':prompt:pure:path' color cyan
 
   prompt pure
 }
