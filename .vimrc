@@ -170,7 +170,7 @@ set completeopt-=preview
 set nowrap
 
 set so=7
-set textwidth=79
+" set textwidth=79
 set timeoutlen=400
 set wildmenu
 set number

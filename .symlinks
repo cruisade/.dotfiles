@@ -1,6 +1,12 @@
 .spacemacs
 .Xresources
+.config/i3
+.config/polybar
 .config/alacritty
 .tmux.conf
 .vimrc
 .vim/ultisnips
+.config/nvim
+.zshrc
+.gitconfig
+.gitignore_global
