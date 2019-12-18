@@ -1,4 +1,4 @@
-! Copyright (c) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
+! Copyright (c) 2017-present Arctic Ice Studio <development@arcticicestudio.com>
 ! Copyright (c) 2016-present Sven Greb <code@svengreb.de>
 
 ! Project:    Nord XResources
@@ -6,60 +6,43 @@
 ! Repository: https://github.com/arcticicestudio/nord-xresources
 ! License:    MIT
 
-#define nord0 #2E3440
-#define nord1 #3B4252
-#define nord2 #434C5E
-#define nord3 #4C566A
-#define nord4 #D8DEE9
-#define nord5 #E5E9F0
-#define nord6 #ECEFF4
-#define nord7 #8FBCBB
-#define nord8 #88C0D0
-#define nord9 #81A1C1
-#define nord10 #5E81AC
-#define nord11 #BF616A
-#define nord12 #D08770
-#define nord13 #EBCB8B
-#define nord14 #A3BE8C
-#define nord15 #B48EAD
-
-*.foreground:   nord4
-*.background:   nord0
-*.cursorColor:  nord4
+*.foreground:   #D8DEE9
+*.background:   #2E3440
+*.cursorColor:  #D8DEE9
 *fading: 35
-*fadeColor: nord3
+*fadeColor: #4C566A
 
 ! black
-*.color0: nord1
-*.color8: nord3
+*.color0: #3B4252
+*.color8: #4C566A
 
 ! red
-*.color1: nord11
-*.color9: nord11
+*.color1: #BF616A
+*.color9: #BF616A
 
 ! green
-*.color2: nord14
-*.color10: nord14
+*.color2: #A3BE8C
+*.color10: #A3BE8C
 
 ! yellow
-*.color3: nord13
-*.color11: nord13
+*.color3: #EBCB8B
+*.color11: #EBCB8B
 
 ! blue
-*.color4: nord9
-*.color12: nord9
+*.color4: #81A1C1
+*.color12: #81A1C1
 
 ! magneta
-*.color5: nord15
-*.color13: nord15
+*.color5: #B48EAD
+*.color13: #B48EAD
 
 ! cyan
-*.color6: nord8
-*.color14: nord7
+*.color6: #88C0D0
+*.color14: #8FBCBB
 
 ! white
-*.color7: nord5
-*.color15: nord6
+*.color7: #E5E9F0
+*.color15: #ECEFF4
 
 
 ! :rofi
@@ -68,9 +51,9 @@ rofi.theme: ~/.dotfiles/.config/rofi/nord.rasi
 
 
 ! urxvt
-URxvt.font: xft:Fira Code:size=6
-! URxvt.lineSpace: -1
-URxvt.letterSpace: 1
+URxvt.font: xft:Fira Code:size=12,xft:FontAwesome:size=12
+URxvt.lineSpace: -1
+URxvt.letterSpace: -1
 URxvt.scrollBar: false
 URxvt.iso14755: false
 URxvt.iso14755_52: false

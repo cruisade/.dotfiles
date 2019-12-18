@@ -2,13 +2,13 @@ exec "xrandr --output DP-1 --right-of DP-2"
 exec "setxkbmap -option ctrl:nocaps -layout us,ru -option 'grp:win_space_toggle'"
 exec --no-startup-id feh --bg-fill ~/.dotfiles/wallpaper.jpg
 exec_always --no-startup-id $HOME/.dotfiles/.config/polybar/polybar.sh
+exec --no-startup-id urxvt -name floatterm
 
 set $mod Mod4
-font pango:monospace 9
+font pango:Fira Code 12
 
 set $right DP-1
 set $left DP-2
-
 
 # binds
 bindsym Control+Print exec gnome-screenshot -i
@@ -39,6 +39,16 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+m move workspace to output $right
 bindsym $mod+Shift+m move workspace to output $left
 
+bindcode $mod+Shift+65 floating toggle
+bindcode $mod+65 focus mode_toggle
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+
+# dopdown terminal
+for_window [instance="floatterm"] floating enable, move scratchpad
+bindsym F12 [instance="floatterm"] scratchpad show
+
 
 # configure workspaces
 bindsym $mod+1 workspace 1
@@ -68,13 +78,12 @@ workspace q output $left
 
 
 # colors
-client.focused          #3F8AC2 #096BAA #00BAA7 #00DA8E
-client.focused_inactive #333333 #5F676A #ffffff #484e50
-client.unfocused        #333333 #424242 #888888 #292d2e
-client.urgent           #C10004 #900000 #ffffff #900000
+# client.focused          #3F8AC2 #096BAA #00BAA7 #00DA8E
+# client.focused_inactive #333333 #5F676A #ffffff #484e50
+# client.unfocused        #333333 #424242 #888888 #292d2e
+# client.urgent           #C10004 #900000 #ffffff #900000
 
 
 # gaps
 gaps inner 10
-# gaps outer 2
 for_window [class=".*"] border pixel 0
