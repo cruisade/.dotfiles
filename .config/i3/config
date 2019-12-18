@@ -22,7 +22,7 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec "alacritty -e $SHELL -c 'tmux new-session -A -s main'"
 bindsym $mod+Ctrl+q kill
 
 bindcode $mod+48 layout toggle split
