@@ -52,25 +52,25 @@ bindsym $mod+t [title="scratchpadterm"] scratchpad show
 
 
 # configure workspaces
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+q workspace q
-bindsym $mod+w workspace w
-bindsym $mod+e workspace e
-bindsym $mod+a workspace a
-bindsym $mod+s workspace s
-bindsym $mod+d workspace d
+bindsym $mod+1 workspace 1: Ⅰ
+bindsym $mod+2 workspace 2: Ⅱ
+bindsym $mod+3 workspace 3: Ⅲ
+bindsym $mod+q workspace 4: Ⅳ
+bindsym $mod+w workspace 5: Ⅴ
+bindsym $mod+e workspace 6: Ⅵ
+bindsym $mod+a workspace 7: Ⅶ
+bindsym $mod+s workspace 8: Ⅷ
+bindsym $mod+d workspace 9: Ⅸ
 
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+q move container to workspace q
-bindsym $mod+Shift+w move container to workspace w
-bindsym $mod+Shift+e move container to workspace e
-bindsym $mod+Shift+a move container to workspace a
-bindsym $mod+Shift+s move container to workspace s
-bindsym $mod+Shift+d move container to workspace d
+bindsym $mod+Shift+1 move container to workspace 1: Ⅰ
+bindsym $mod+Shift+2 move container to workspace 2: Ⅱ
+bindsym $mod+Shift+3 move container to workspace 3: Ⅲ
+bindsym $mod+Shift+q move container to workspace 4: Ⅳ
+bindsym $mod+Shift+w move container to workspace 5: Ⅴ
+bindsym $mod+Shift+e move container to workspace 6: Ⅵ
+bindsym $mod+Shift+a move container to workspace 7: Ⅶ
+bindsym $mod+Shift+s move container to workspace 8: Ⅷ
+bindsym $mod+Shift+d move container to workspace 9: Ⅸ
 
 workspace 1 output $left
 workspace 2 output $right
@@ -87,4 +87,6 @@ workspace q output $left
 
 # gaps
 gaps inner 10
+gaps top 30
+# gaps outer 10
 for_window [class=".*"] border pixel 0

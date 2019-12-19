@@ -6,16 +6,23 @@ primary = #88C0D0
 alert = #BF616A
 warning = #EBCB8B
 
+
 [bar/top]
-width = 100%
+; width = 100%
+width = 100%:-20
+offset-x = 10
+; offset-y = 10
 height = 2.5%
 fixed-center = true
+override-redirect = true
+; wm-restack = i3
 line-size = 6
 background = ${colors.background}
 foreground = ${colors.foreground}
 
 font-0 = Fire Code:size=11:style=bold;1
-font-1 = FontAwesome:size=11
+font-1 = Font Awesome 5 Free:size=11
+font-2 = Noto Sans Symbols:size=11:style=bold
 
 ; separator = |
 ; module-margin = 1
@@ -36,6 +43,7 @@ cursor-scroll = ns-resize
 type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
+strip-wsnumbers = true
 wrapping-scroll = false
 
 label-focused = %name%
@@ -67,10 +75,8 @@ label-empty = Desktop
 type = internal/date
 format = <label>
 interval = 1.0
-
 date = %H:%M
 date-alt = %Y-%m-%d %H:%M
-
 label =  %date%
 label-margin = 1
 label-underline = ${colors.primary}
