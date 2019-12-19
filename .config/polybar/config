@@ -19,7 +19,7 @@ font-1 = FontAwesome:size=11
 
 ; separator = |
 ; module-margin = 1
-modules-left = i3
+modules-left = i3 title
 modules-center =
 modules-right = xkeyboard date
 
@@ -51,6 +51,16 @@ label-urgent-padding = 2
 
 label-separator = |
 label-separator-foreground = ${colors.background-alt}
+
+
+[module/title]
+type = internal/xwindow
+format-foreground = ${colors.foreground}
+format-underline = ${colors.primary}
+format-padding = 4
+
+label-maxlen = 20
+label-empty = Desktop
 
 
 [module/date]
