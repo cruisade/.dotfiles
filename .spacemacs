@@ -38,7 +38,9 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      helm
-     auto-completion
+     (auto-completion :variables
+                      auto-completion-tab-key-behavior 'complete
+                      auto-completion-enable-snippets-in-popup t)
      ;; better-defaults
      emacs-lisp
      (git :variables
@@ -315,6 +317,8 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (define-key evil-normal-state-map (kbd "C-e") 'helm-mini)
   (define-key evil-normal-state-map (kbd "C-p") 'helm-projectile-find-file)
+
+  (global-company-mode t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
