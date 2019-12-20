@@ -8,5 +8,6 @@
 .config/i3
 .config/polybar
 .config/alacritty
+.config/kitty
 .gitconfig
 .gitignore_global

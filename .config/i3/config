@@ -46,7 +46,7 @@ bindsym $mod+minus scratchpad show
 
 # dropdown terminal
 exec --no-startup-id kitty --title scratchpadterm
-for_window [title="scratchpadterm"] floating enable, resize set width 100 ppt, move position 0 10, move scratchpad
+for_window [title="scratchpadterm"] floating enable, resize set width 100 ppt, resize set height 50 ppt, move position 0 0, move scratchpad
 bindsym F12 [title="scratchpadterm"] scratchpad show
 bindsym $mod+t [title="scratchpadterm"] scratchpad show
 
