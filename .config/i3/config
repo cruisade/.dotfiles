@@ -87,6 +87,6 @@ workspace q output $left
 
 # gaps
 gaps inner 10
-gaps top 30
+# gaps top 30
 # gaps outer 10
 for_window [class=".*"] border pixel 0

@@ -8,13 +8,13 @@ warning = #EBCB8B
 
 
 [bar/top]
-; width = 100%
-width = 100%:-20
-offset-x = 10
+width = 100%
+; width = 100%:-20
+; offset-x = 10
 ; offset-y = 10
 height = 2.5%
 fixed-center = true
-override-redirect = true
+; override-redirect = true
 ; wm-restack = i3
 line-size = 6
 background = ${colors.background}
