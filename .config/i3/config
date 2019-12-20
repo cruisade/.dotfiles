@@ -22,7 +22,7 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-bindsym $mod+Return exec "alacritty -e $SHELL -c 'tmux new-session -A -s main'"
+bindsym $mod+Return exec "kitty $SHELL -c 'tmux new-session -A -s main'"
 bindsym $mod+Ctrl+q kill
 
 bindcode $mod+48 layout toggle split
@@ -45,7 +45,7 @@ bindsym $mod+minus scratchpad show
 
 
 # dropdown terminal
-exec --no-startup-id alacritty --title scratchpadterm
+exec --no-startup-id kitty --title scratchpadterm
 for_window [title="scratchpadterm"] floating enable, resize set width 100 ppt, move position 0 10, move scratchpad
 bindsym F12 [title="scratchpadterm"] scratchpad show
 bindsym $mod+t [title="scratchpadterm"] scratchpad show
