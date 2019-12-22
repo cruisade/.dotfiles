@@ -1,6 +1,6 @@
 set nocompatible
 
-let mapleader=','
+let mapleader="\<space>"
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !mkdir -p ~/.vim/autoload
@@ -96,6 +96,9 @@ Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/surround.vim'
   vmap ( S)i
   vmap ) S)%a
+
+Plug 'junegunn/goyo.vim'
+  nnoremap <leader>z :Goyo<Cr>
 
 call plug#end()
 
