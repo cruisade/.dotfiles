@@ -75,7 +75,7 @@ bindsym $mod+Shift+d move container to workspace 9: Ⅸ
 workspace 1 output $left
 workspace 2 output $right
 workspace 3 output $right
-workspace q output $left
+workspace 4 output $left
 
 
 # colors
