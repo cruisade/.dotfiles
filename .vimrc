@@ -17,6 +17,8 @@ Plug 'sjl/tslime.vim'                 " Lisp plugin (send code to tmux window)
   let g:tslime_visual_mapping = '<leader>t'
   let g:tslime_vars_mapping = '<leader>T'
 
+Plug 'pangloss/vim-javascript'
+
 Plug 'dense-analysis/ale'
   " Disabling highlighting
   let g:ale_set_highlights = 0
@@ -54,7 +56,16 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
-  let g:lightline = { 'colorscheme': 'nord' }
+  let g:lightline = {
+      \ 'colorscheme': 'nord',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
 
 Plug 'scrooloose/nerdcommenter'
   let g:NERDCreateDefaultMappings = 0
@@ -84,8 +95,12 @@ Plug 'junegunn/fzf.vim'
   nnoremap <C-O> :Tags<Cr>
   nnoremap <leader>b :call fzf#vim#tags("'".expand('<cword>'))<Cr>
 
+Plug 'tpope/vim-fugitive'
+  nnoremap <leader>gs :Gstatus<Cr>
+
 Plug 'markonm/traces.vim'             " Search highlighting plugin
 Plug 'Raimondi/delimitMate'           " autoclosing bracets
+Plug 'jiangmiao/auto-pairs'
 
 Plug 'ludovicchabant/vim-gutentags'
   let g:gutentags_ctags_tagfile = '.tags'
@@ -192,6 +207,8 @@ endif
 
 set background="dark"
 colorscheme nord
+hi Normal guibg=NONE ctermbg=NONE
+hi LineNr guibg=NONE ctermbg=NONE
 
 " :hooks
 augroup _buf_write_pre
