@@ -128,8 +128,8 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
-inoremap <up>    <nop>
-inoremap <down>  <nop>
+" inoremap <up>    <nop>
+" inoremap <down>  <nop>
 inoremap <left>  <nop>
 inoremap <right> <nop>
 

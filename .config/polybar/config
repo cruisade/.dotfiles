@@ -8,6 +8,7 @@ warning = #EBCB8B
 
 
 [bar/top]
+monitor = DP-2
 width = 100%
 ; width = 100%:-20
 ; offset-x = 10
