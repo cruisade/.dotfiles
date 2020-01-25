@@ -17,7 +17,8 @@ Plug 'sjl/tslime.vim'                 " Lisp plugin (send code to tmux window)
   let g:tslime_visual_mapping = '<leader>t'
   let g:tslime_vars_mapping = '<leader>T'
 
-Plug 'pangloss/vim-javascript'
+Plug 'sheerun/vim-polyglot'
+Plug 'OmniSharp/omnisharp-vim'
 
 Plug 'dense-analysis/ale'
   " Disabling highlighting
@@ -25,7 +26,12 @@ Plug 'dense-analysis/ale'
   let g:ale_lint_on_text_changed = 'never'
   let g:ale_lint_on_enter = 0
 
-  nmap <silent> <leader>a <Plug>(ale_next_wrap)
+  let g:ale_linters = {
+  \ 'cs': ['OmniSharp']
+  \}
+
+  nmap <silent> <leader>an <Plug>(ale_next_wrap)
+  nmap <silent> <leader>ad <Plug>(ale_detail)
 
 Plug 'sirver/ultisnips'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
@@ -163,7 +169,7 @@ set laststatus=2
 set number
 
 " with this line commented vim won't get suspended then executing some actions
-set shell=/usr/bin/zsh\ -i
+set shell=/bin/zsh\ -i
 
 " show spaces as characters
 set list
