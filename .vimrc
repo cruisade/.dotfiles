@@ -73,6 +73,14 @@ Plug 'itchyny/lightline.vim'
       \ },
       \ }
 
+  func! _setup_colorscheme()
+    set background="dark"
+    colorscheme nord
+
+    hi Normal guibg=NONE ctermbg=NONE
+    hi LineNr guibg=NONE ctermbg=NONE
+  endfunc!
+
 Plug 'scrooloose/nerdcommenter'
   let g:NERDCreateDefaultMappings = 0
   let g:NERDSpaceDelims = 1
@@ -115,8 +123,6 @@ Plug 'majutsushi/tagbar'
   nnoremap <C-G> :TagbarToggle<Cr>
 
 Plug 'vim-scripts/surround.vim'
-  vmap ( S)i
-  vmap ) S)%a
 
 Plug 'junegunn/goyo.vim'
   nnoremap <leader>z :Goyo<Cr>
@@ -211,10 +217,10 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-set background="dark"
-colorscheme nord
-hi Normal guibg=NONE ctermbg=NONE
-hi LineNr guibg=NONE ctermbg=NONE
+augroup setup_colorscheme
+  au!
+  au VimEnter * call _setup_colorscheme()
+augroup end
 
 " :hooks
 augroup _buf_write_pre
