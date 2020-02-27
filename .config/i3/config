@@ -24,14 +24,14 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 bindsym $mod+Return exec "kitty $SHELL -c 'tmux new-session -A -s main'"
-bindsym $mod+Ctrl+q kill
+bindsym $mod+q kill
 
 bindcode $mod+48 layout toggle split
 bindcode $mod+47 layout tabbed
 bindcode $mod+Ctrl+47 layout stacking
 
 bindsym $mod+Tab exec "rofi -show window"
-bindsym $mod+Ctrl+Tab exec "rofi -combi-modi drun,run -show combi"
+bindsym $mod+r exec "rofi -combi-modi drun,run -show combi"
 bindsym $mod+l exec "i3lock -c 000000"
 
 bindsym $mod+f fullscreen toggle
@@ -44,11 +44,18 @@ bindcode $mod+65 focus mode_toggle
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+ # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%- # decrease screen brightness
 
 # dropdown terminal
 exec --no-startup-id kitty --title scratchpadterm
 for_window [title="scratchpadterm"] floating enable, resize set width 100 ppt, resize set height 50 ppt, move position 0 0, move scratchpad
-bindsym F12 [title="scratchpadterm"] scratchpad show
 bindsym $mod+t [title="scratchpadterm"] scratchpad show
 
 
@@ -56,22 +63,22 @@ bindsym $mod+t [title="scratchpadterm"] scratchpad show
 bindsym $mod+1 workspace 1: Ⅰ
 bindsym $mod+2 workspace 2: Ⅱ
 bindsym $mod+3 workspace 3: Ⅲ
-bindsym $mod+q workspace 4: Ⅳ
-bindsym $mod+w workspace 5: Ⅴ
-bindsym $mod+e workspace 6: Ⅵ
-bindsym $mod+a workspace 7: Ⅶ
-bindsym $mod+s workspace 8: Ⅷ
-bindsym $mod+d workspace 9: Ⅸ
+bindsym $mod+4 workspace 4: Ⅳ
+bindsym $mod+5 workspace 5: Ⅴ
+bindsym $mod+6 workspace 6: Ⅵ
+bindsym $mod+7 workspace 7: Ⅶ
+bindsym $mod+8 workspace 8: Ⅷ
+bindsym $mod+9 workspace 9: Ⅸ
 
 bindsym $mod+Shift+1 move container to workspace 1: Ⅰ
 bindsym $mod+Shift+2 move container to workspace 2: Ⅱ
 bindsym $mod+Shift+3 move container to workspace 3: Ⅲ
-bindsym $mod+Shift+q move container to workspace 4: Ⅳ
-bindsym $mod+Shift+w move container to workspace 5: Ⅴ
-bindsym $mod+Shift+e move container to workspace 6: Ⅵ
-bindsym $mod+Shift+a move container to workspace 7: Ⅶ
-bindsym $mod+Shift+s move container to workspace 8: Ⅷ
-bindsym $mod+Shift+d move container to workspace 9: Ⅸ
+bindsym $mod+Shift+4 move container to workspace 4: Ⅳ
+bindsym $mod+Shift+5 move container to workspace 5: Ⅴ
+bindsym $mod+Shift+6 move container to workspace 6: Ⅵ
+bindsym $mod+Shift+7 move container to workspace 7: Ⅶ
+bindsym $mod+Shift+8 move container to workspace 8: Ⅷ
+bindsym $mod+Shift+9 move container to workspace 9: Ⅸ
 
 # workspace 1 output $left
 # workspace 2 output $right
@@ -80,14 +87,15 @@ bindsym $mod+Shift+d move container to workspace 9: Ⅸ
 
 
 # colors
-# client.focused          #3F8AC2 #096BAA #00BAA7 #00DA8E
-# client.focused_inactive #333333 #5F676A #ffffff #484e50
-# client.unfocused        #333333 #424242 #888888 #292d2e
-# client.urgent           #C10004 #900000 #ffffff #900000
+client.focused          #3F8AC2 #096BAA #00BAA7 #00DA8E
+client.focused_inactive #333333 #5F676A #ffffff #484e50
+client.unfocused        #333333 #424242 #888888 #292d2e
+client.urgent           #C10004 #900000 #ffffff #900000
 
+hide_edge_borders smart
 
 # gaps
-gaps inner 10
+gaps inner 0
 # gaps top 30
 # gaps outer 10
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 3

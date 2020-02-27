@@ -33,32 +33,32 @@ Plug 'dense-analysis/ale'
   nmap <silent> <leader>an <Plug>(ale_next_wrap)
   nmap <silent> <leader>ad <Plug>(ale_detail)
 
-Plug 'sirver/ultisnips'
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-  let g:UltiSnipsEnableSnipMate = 0
-  let g:UltiSnipsSnippetDirectories=[ $HOME . '/.vim/ultisnips' ]
-  let g:coc_global_extensions = [ 'coc-snippets' ]
-  let g:UltiSnipsEditSplit="horizontal"
+" Plug 'sirver/ultisnips'
+" Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+  " let g:UltiSnipsEnableSnipMate = 0
+  " let g:UltiSnipsSnippetDirectories=[ $HOME . '/.vim/ultisnips' ]
+  " let g:coc_global_extensions = [ 'coc-snippets' ]
+  " let g:UltiSnipsEditSplit="horizontal"
 
-  let g:UltiSnipsExpandTrigger = "<nop>"
-  let g:UltiSnipsJumpForwardTrigger = '<C-J>'
-  let g:UltiSnipsJumpBackwardTrigger = '<C-K>'
-  let g:coc_snippet_next = '<C-J>'
-  let g:coc_snippet_prev = '<C-K>'
+  " let g:UltiSnipsExpandTrigger = "<nop>"
+  " let g:UltiSnipsJumpForwardTrigger = '<C-J>'
+  " let g:UltiSnipsJumpBackwardTrigger = '<C-K>'
+  " let g:coc_snippet_next = '<C-J>'
+  " let g:coc_snippet_prev = '<C-K>'
 
-  inoremap <expr> <C-J> pumvisible() ? "\<C-n>" : "\<Tab>"
-  inoremap <expr> <C-K> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+  " inoremap <expr> <C-J> pumvisible() ? "\<C-n>" : "\<Tab>"
+  " inoremap <expr> <C-K> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-  inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+  " inoremap <silent><expr> <TAB>
+      " \ pumvisible() ? coc#_select_confirm() :
+      " \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      " \ <SID>check_back_space() ? "\<TAB>" :
+      " \ coc#refresh()
 
-  function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-  endfunction
+  " function! s:check_back_space() abort
+    " let col = col('.') - 1
+    " return !col || getline('.')[col - 1]  =~# '\s'
+  " endfunction
 
 Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
@@ -116,8 +116,8 @@ Plug 'markonm/traces.vim'             " Search highlighting plugin
 Plug 'Raimondi/delimitMate'           " autoclosing bracets
 Plug 'jiangmiao/auto-pairs'
 
-Plug 'ludovicchabant/vim-gutentags'
-  let g:gutentags_ctags_tagfile = '.tags'
+" Plug 'ludovicchabant/vim-gutentags'
+  " let g:gutentags_ctags_tagfile = '.tags'
 
 Plug 'majutsushi/tagbar'
   nnoremap <C-G> :TagbarToggle<Cr>
