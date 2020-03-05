@@ -6,7 +6,7 @@ pacman -S i3-gaps
 pacman -S dunst
 pacman -S polybar
 
-
+pacman -S htop
 pacman -S kitty
 pacman -S python
 pacman -S fzf
@@ -54,7 +54,7 @@ sudo cp ~/.dotfiles/devices/90-touchpad.conf /etc/X11/xorg.conf.d/
 sudo cp ~/.dotfiles/devices/10-backlight.conf /etc/X11/xorg.conf.d/
 
 ##fonts
-cd ~/pkg
-git clone https://aur.archlinux.org/nerd-fonts-complete.git
-cd nerd-fonts-complete
+cd ~/pkg &&
+git clone https://aur.archlinux.org/nerd-fonts-complete.git &&
+cd nerd-fonts-complete &&
 makepkg -si
