@@ -18,12 +18,15 @@ pacman -S zsh
 pacman -S tmux
 pacman -S blueman
 
+
 ##symlinks
 cd ~
 ln -s ~/.dotfiles/.tmux.conf .tmux.conf 
 ln -s ~/.dotfiles/.vimrc .vimrc
 ln -s ~/.dotfiles/.Xresources .Xresources
 ln -s ~/.dotfiles/.zshrc .zshrc
+ln -s ~/.dotfiles/.gitconfig .gitconfig  
+
 
 mrdir .config
 cd .config
@@ -33,6 +36,17 @@ ln -s ~/.dotfiles/.config/i3 i3
 ln -s ~/.dotfiles/.config/nvim nvim
 ln -s ~/.dotfiles/.config/polybar polybar
 
+
+##snap
+cd ~
+git clone https://aur.archlinux.org/snapd.git
+cd snapd
+makepkg -si
+sudo systemctl enable --now snapd.socket
+sudo ln -s /var/lib/snapd/snap /snap
+
+##vscode
+sudo snap install --classic code
 
 #device_config
 mkdir /etc/X11/xorg.conf
