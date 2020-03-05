@@ -1,7 +1,7 @@
 exec "xrandr --output DP-1 --right-of DP-2"
 exec "xrandr --output DP-1 --rotate right"
 exec "setxkbmap -option ctrl:nocaps -layout us,ru -option 'grp:win_space_toggle'"
-# exec --no-startup-id feh --bg-fill ~/.dotfiles/wallpaper.jpg
+exec --no-startup-id feh --bg-fill ~/.dotfiles/wallpaper.jpg
 exec_always --no-startup-id $HOME/.dotfiles/.config/polybar/polybar.sh
 
 set $mod Mod4
@@ -45,13 +45,13 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec amixer -q sset Master 3%+
+bindsym XF86AudioLowerVolume exec amixer -q sset Master 3%- 
+bindsym XF86AudioMute exec amixer -q sset Master toggle 
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+ # increase screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%- # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # dropdown terminal
 exec --no-startup-id kitty --title scratchpadterm

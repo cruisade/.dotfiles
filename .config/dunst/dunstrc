@@ -160,8 +160,7 @@
     max_icon_size = 32
 
     # Paths to default icons.
-    icon_folders = /home/kuzmindv/.dotfiles/.config/dunst/icons/
-
+    # icon_path = /home/cruisade/.dotfiles/.config/dunst/icons/
     ### History ###
 
     # Should a notification popped up from history be sticky or timeout
@@ -245,4 +244,4 @@
 
 [slack]
     appname = Slack
-    new_icon = slack
+    new_icon = /home/cruisade/.dotfiles/.config/dunst/icons/slack-dunst.png
