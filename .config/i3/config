@@ -80,17 +80,27 @@ bindsym $mod+Shift+7 move container to workspace 7: Ⅶ
 bindsym $mod+Shift+8 move container to workspace 8: Ⅷ
 bindsym $mod+Shift+9 move container to workspace 9: Ⅸ
 
+#background = #2E3440
+#background-alt = #3B4252
+#foreground = #D8DEE9
+#primary = #88C0D0
+#alert = #BF616A
+#warning = #EBCB8B
+
+
+# class                 border  bground text    indicator child_border
+client.focused          #4C7899 #2B5B7F #FFFFFF #2E9EF4   #285577
+client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
+client.unfocused        #333333 #2E3440 #888888 #292D2E   #222222
+client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+
+client.background       #FFFFFF
+
 # workspace 1 output $left
 # workspace 2 output $right
 # workspace 3 output $right
 # workspace 4 output $left
-
-
-# colors
-client.focused          #3F8AC2 #096BAA #00BAA7 #00DA8E
-client.focused_inactive #333333 #5F676A #ffffff #484e50
-client.unfocused        #333333 #424242 #888888 #292d2e
-client.urgent           #C10004 #900000 #ffffff #900000
 
 hide_edge_borders smart
 

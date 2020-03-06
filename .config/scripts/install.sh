@@ -45,14 +45,6 @@ makepkg -si
 sudo systemctl enable --now snapd.socket
 sudo ln -s /var/lib/snapd/snap /snap
 
-##vscode
-sudo snap install --classic code
-
-#device_config
-mkdir /etc/X11/xorg.conf
-sudo cp ~/.dotfiles/devices/90-touchpad.conf /etc/X11/xorg.conf.d/
-sudo cp ~/.dotfiles/devices/10-backlight.conf /etc/X11/xorg.conf.d/
-
 ##fonts
 cd ~/pkg &&
 git clone https://aur.archlinux.org/nerd-fonts-complete.git &&

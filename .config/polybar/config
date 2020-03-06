@@ -72,7 +72,7 @@ label-separator-foreground = ${colors.foreground}
 
 [module/title]
 type = internal/xwindow
-format-foreground = ${colors.foreground}
+format-foreground = ${colors.primary}
 format-padding = 4
 
 label-width = 50
@@ -130,6 +130,7 @@ ramp-capacity-6 = 
 ramp-capacity-7 = 
 ramp-capacity-8 = 
 ramp-capacity-9 = 
+
 
 
 ramp-capacity-0-foreground = ${colors.foreground}
