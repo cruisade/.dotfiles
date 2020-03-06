@@ -30,11 +30,13 @@ ln -s ~/.dotfiles/.gitconfig .gitconfig
 
 mrdir .config
 cd .config
-ln -s ~/.dotfiles/.config/dunst dunst
-ln -s ~/.dotfiles/.config/kitty kitty
-ln -s ~/.dotfiles/.config/i3 i3
-ln -s ~/.dotfiles/.config/nvim nvim
-ln -s ~/.dotfiles/.config/polybar polybar
+ln -sn ~/.dotfiles/.config/dunst dunst
+ln -sn ~/.dotfiles/.config/kitty kitty
+ln -sn ~/.dotfiles/.config/i3 i3
+ln -sn ~/.dotfiles/.config/nvim nvim
+ln -sn ~/.dotfiles/.config/polybar polybar
+
+nvim +'PlugInstall --sync' +'PlugUpdate' +qa  
 
 
 ##snap
@@ -50,3 +52,5 @@ cd ~/pkg &&
 git clone https://aur.archlinux.org/nerd-fonts-complete.git &&
 cd nerd-fonts-complete &&
 makepkg -si
+
+i3 reload
