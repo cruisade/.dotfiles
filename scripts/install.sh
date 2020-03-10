@@ -14,8 +14,8 @@ ln -s ~/.dotfiles/.zshrc .zshrc
 ln -s ~/.dotfiles/.gitconfig .gitconfig  
 
 
-mrdir .config
-cd .config
+mrdir ./.config
+cd ./.config
 ln -sn ~/.dotfiles/.config/dunst dunst
 ln -sn ~/.dotfiles/.config/kitty kitty
 ln -sn ~/.dotfiles/.config/i3 i3
@@ -25,9 +25,8 @@ ln -sn ~/.dotfiles/.config/polybar polybar
 nvim +'PlugInstall --sync' +'PlugUpdate' +qa  
 
 ##snap
-cd ~
-mkdir pkg
-cd pkg
+mkdir ~/pkg
+cd ~/pkg
 git clone https://aur.archlinux.org/snapd.git
 cd snapd
 sudo -u nobody makepkg -si
