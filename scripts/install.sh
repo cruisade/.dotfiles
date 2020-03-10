@@ -29,7 +29,7 @@ nvim +'PlugInstall --sync' +'PlugUpdate' +qa
 cd ~
 git clone https://aur.archlinux.org/snapd.git
 cd snapd
-makepkg -si
+sudo -u $USER makepkg -si
 sudo systemctl enable --now snapd.socket
 sudo ln -s /var/lib/snapd/snap /snap
 
@@ -37,6 +37,6 @@ sudo ln -s /var/lib/snapd/snap /snap
 cd ~/pkg &&
 git clone https://aur.archlinux.org/nerd-fonts-complete.git &&
 cd nerd-fonts-complete &&
-makepkg -si
+sudo -u $USER makepkg -si
 
 i3 reload
