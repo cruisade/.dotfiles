@@ -21,6 +21,7 @@ pacman -S blueman
 
 ##symlinks
 cd ~
+mv ~/dotfiles ~/.dotfiles
 ln -s ~/.dotfiles/.tmux.conf .tmux.conf 
 ln -s ~/.dotfiles/.vimrc .vimrc
 ln -s ~/.dotfiles/.Xresources .Xresources
