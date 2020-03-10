@@ -1,22 +1,7 @@
 ###packages
 
-pacman -Suy
-pacman -S rofi
-pacman -S i3-gaps
-pacman -S dunst
-pacman -S polybar
-
-pacman -S htop
-pacman -S kitty
-pacman -S python
-pacman -S fzf
-pacman -S nvim
-pacman -S vim
-pacman -S docker
-pacman -S kubectl
-pacman -S zsh
-pacman -S tmux
-pacman -S blueman
+pacman -Suy --noconfirm
+pacman -S --noconfirm rofi i3-gaps dunst polybar htop kitty python fzf nvim vim docker kubectl zsh tmux blueman
 
 
 ##symlinks
