@@ -35,8 +35,8 @@ sudo systemctl enable --now snapd.socket
 sudo ln -s /var/lib/snapd/snap /snap
 
 ##fonts
-cd ~/pkg &&
-git clone https://aur.archlinux.org/nerd-fonts-complete.git &&
-cd nerd-fonts-complete &&
+cd ~/pkg 
+git clone https://aur.archlinux.org/nerd-fonts-complete.git 
+cd nerd-fonts-complete 
 sudo -u nobody makepkg -si
  
