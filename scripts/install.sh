@@ -24,9 +24,10 @@ ln -sn ~/.dotfiles/.config/polybar polybar
 
 nvim +'PlugInstall --sync' +'PlugUpdate' +qa  
 
-
 ##snap
 cd ~
+mkdir pkg
+cd pkg
 git clone https://aur.archlinux.org/snapd.git
 cd snapd
 sudo -u $USER makepkg -si
@@ -38,5 +39,5 @@ cd ~/pkg &&
 git clone https://aur.archlinux.org/nerd-fonts-complete.git &&
 cd nerd-fonts-complete &&
 sudo -u $USER makepkg -si
-
+ 
 i3 reload
