@@ -1,6 +1,6 @@
 ###packages
 
-pacman -Suy --noconfirm
+yes | pacman -Suy --noconfirm
 pacman -S --noconfirm rofi i3-gaps dunst polybar htop kitty fzf neovim vim docker kubectl zsh tmux blueman
 
 
