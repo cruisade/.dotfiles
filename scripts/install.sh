@@ -1,6 +1,6 @@
 ###packages
 
-sudo yes | pacman -Suy --noconfirm
+yes | sudo pacman -Suy
 sudo pacman -S --noconfirm rofi i3-gaps dunst polybar htop kitty fzf neovim vim docker kubectl zsh tmux blueman snapd
 sudo pacman -Ss font
 sudo systemctl enable --now snapd.socket
