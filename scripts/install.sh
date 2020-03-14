@@ -23,7 +23,7 @@ ln -sn ~/.dotfiles/.config/i3 i3
 ln -sn ~/.dotfiles/.config/nvim nvim
 ln -sn ~/.dotfiles/.config/polybar polybar
 
-chsh -s $(which zsh)
+sudo chsh -s $(which zsh)
 nvim +'PlugInstall --sync' +'PlugUpdate' +qa  
 
 ##fonts
