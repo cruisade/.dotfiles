@@ -25,3 +25,11 @@ ln -sn ~/.dotfiles/.config/polybar polybar
 
 chsh -s $(which zsh)
 nvim +'PlugInstall --sync' +'PlugUpdate' +qa  
+
+##fonts
+mkdir ~/pkg
+cd ~/pkg 
+git clone https://aur.archlinux.org/nerd-fonts-complete.git 
+cd nerd-fonts-complete 
+makepkg -si
+fc-cache
