@@ -27,9 +27,5 @@ sudo chsh -s $(which zsh)
 nvim +'PlugInstall --sync' +'PlugUpdate' +qa  
 
 ##fonts
-mkdir ~/pkg
-cd ~/pkg 
-git clone https://aur.archlinux.org/nerd-fonts-complete.git 
-cd nerd-fonts-complete 
-makepkg -si
+sudo cp .dotfiles/.config/polybar/fonts/Iosevka\ Nerd\ Font\ Complete.ttf /usr/share/fonts
 fc-cache
