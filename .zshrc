@@ -3,6 +3,7 @@ docompinit() {
 }
 
 export TERM=xterm-256color
+export PATH="/opt/dotnet:~/.dotnet/tools:$PATH"
 
 # :prezto
 {

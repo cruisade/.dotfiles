@@ -1,5 +1,5 @@
-exec "xrandr --output DP-1 --right-of DP-2"
-exec "xrandr --output DP-1 --rotate right"
+#exec "xrandr --output HDMI-1 --right-of DP-3"
+#exec "xrandr --output DP-1 --rotate right"
 exec "setxkbmap -option ctrl:nocaps -layout us,ru -option 'grp:win_space_toggle'"
 exec --no-startup-id feh --bg-fill ~/.dotfiles/wallpaper.jpg
 exec_always --no-startup-id $HOME/.dotfiles/.config/polybar/polybar.sh
@@ -7,8 +7,8 @@ exec_always --no-startup-id $HOME/.dotfiles/.config/polybar/polybar.sh
 set $mod Mod4
 font pango:Fira Code 12
 
-set $right DP-1
-set $left DP-2
+#set $right HDMI-1
+#set $left DP-3
 
 # binds
 bindsym Control+Print exec gnome-screenshot -i
@@ -46,8 +46,8 @@ bindsym $mod+minus scratchpad show
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 3%+
-bindsym XF86AudioLowerVolume exec amixer -q sset Master 3%- 
-bindsym XF86AudioMute exec amixer -q sset Master toggle 
+bindsym XF86AudioLowerVolume exec amixer -q sset Master 3%-
+bindsym XF86AudioMute exec amixer -q sset Master toggle
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
@@ -99,8 +99,11 @@ client.background       #FFFFFF
 
 # workspace 1 output $left
 # workspace 2 output $right
-# workspace 3 output $right
-# workspace 4 output $left
+# workspace 3 output $left
+# workspace 4 output $right
+# workspace 5 output $left
+# workspace 6 output $right
+ 
 
 hide_edge_borders smart
 
