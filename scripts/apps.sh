@@ -1,4 +1,4 @@
 sudo pacman -S libdbusmenu-glib gconf
-snap install --classic code  ##vscode
-snap install --classic telegram-desktop 
-snap install --classic slack
+sudo snap install --classic code  ##vscode
+sudo snap install --classic telegram-desktop 
+sudo snap install --classic slack
