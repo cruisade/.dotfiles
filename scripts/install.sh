@@ -27,5 +27,5 @@ sudo chsh -s $(which zsh)
 nvim +'PlugInstall --sync' +'PlugUpdate' +qa  
 
 ##fonts
-sudo cp .dotfiles/.config/polybar/fonts/Iosevka\ Nerd\ Font\ Complete.ttf /usr/share/fonts
+sudo cp ~/.dotfiles/.config/polybar/fonts/Iosevka\ Nerd\ Font\ Complete.ttf /usr/share/fonts
 fc-cache
