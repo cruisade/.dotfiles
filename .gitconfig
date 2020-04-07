@@ -35,7 +35,7 @@
   # the usual default is to push all branches
   default = upstream
 [core]
-  autocrlf = false
+	autocrlf = input
   editor = vim
   excludesfile = ~/.gitignore_global
 [advice]

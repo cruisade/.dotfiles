@@ -169,4 +169,7 @@ export PATH="/opt/dotnet:~/.dotnet/tools:$PATH"
   # :alias-docker
   alias dk='docker '
   alias dko='docker-compose'
+
+  # :alias xclip
+  alias xc='xclip -sel clip'
 }
