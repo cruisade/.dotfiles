@@ -15,6 +15,7 @@ ln -s ~/.dotfiles/.Xresources .Xresources
 ln -s ~/.dotfiles/.zshrc .zshrc
 ln -s ~/.dotfiles/.gitconfig .gitconfig  
 
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 cd ./.config
 ln -sn ~/.dotfiles/.config/dunst dunst
