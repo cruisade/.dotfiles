@@ -30,14 +30,20 @@ bindcode $mod+48 layout toggle split
 bindcode $mod+47 layout tabbed
 bindcode $mod+Ctrl+47 layout stacking
 
+bindsym $mod+Shift+r reload
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
 bindsym $mod+Tab exec "rofi -show window"
 bindsym $mod+r exec "rofi -combi-modi drun,run -show combi"
 bindsym $mod+l exec "i3lock -c 000000"
 
 bindsym $mod+f fullscreen toggle
 
-bindsym $mod+m move workspace to output $right
-bindsym $mod+Shift+m move workspace to output $left
 
 bindcode $mod+Shift+65 floating toggle
 bindcode $mod+65 focus mode_toggle

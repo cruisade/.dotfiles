@@ -172,4 +172,6 @@ export PATH="/opt/dotnet:~/.dotnet/tools:$PATH"
 
   # :alias xclip
   alias xc='xclip -sel clip'
+  # :alias watch
+  alias watch='watch '
 }
