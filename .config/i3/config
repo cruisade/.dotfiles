@@ -3,6 +3,7 @@
 exec "setxkbmap -option ctrl:nocaps -layout us,ru -option 'grp:win_space_toggle'"
 exec --no-startup-id feh --bg-fill ~/.dotfiles/wallpaper.jpg
 exec_always --no-startup-id $HOME/.dotfiles/.config/polybar/polybar.sh
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 set $mod Mod4
 font pango:Fira Code 12
